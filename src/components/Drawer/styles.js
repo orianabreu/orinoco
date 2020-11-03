@@ -5,6 +5,10 @@ export const IconContainer = styled.div`
     svg{
       font-size: ${({theme})=>theme.scale.h5};
     }
+
+    @media (max-width:484px) {
+      margin-right: ${({theme})=>theme.scale.base}px;
+    }
 `;
 
 export const Overlay = styled.div`
@@ -33,7 +37,7 @@ export const OptionsContainer = styled.div`
 
 export const Row = styled.div`
   width:100%;
-  height: ${({theme})=>theme.scale.base*6}px;
+  height: ${({theme})=>theme.scale.base*6.6}px;
   display: flex;
   align-items: center;
   justify-content: ${({justify})=>justify || 'flex-start'};
@@ -49,5 +53,6 @@ export const Row = styled.div`
   
   svg{
     font-size: ${({theme})=>theme.scale.h3};
+    margin-right: none;
   }
 `;

@@ -3,16 +3,22 @@ import styled from 'styled-components';
 export const Container = styled.header`
   position: fixed;
   width:100vw;
-  padding: ${({theme})=> theme.scale.base*2}px;
+  padding: ${({theme})=> theme.scale.base}px;
   background-color: ${({theme})=>theme.palette.primary};
   display:flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width:484px) {
+      padding: 10px;
+    }
 `;
 
 export const LogoContainer = styled.div`
   img {
-    height: ${({theme})=>theme.scale.base*6}px;
+    height: ${({theme})=>theme.scale.base*4}px;
+    margin-left: ${({theme, isMobile})=>isMobile && theme.scale.base}px; 
+    cursor: pointer; 
   }
 `;
 
