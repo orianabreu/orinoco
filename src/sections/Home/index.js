@@ -11,8 +11,8 @@ export default function Home(){
 
     return (
         <WindowSection id='home'>
-            <S.VideoContainer>
-                <S.VideoHome loop autoPlay>
+            <S.VideoContainer isMobile={isMobile}>
+                <S.VideoHome isMobile={isMobile} loop autoPlay muted>
                     <source src={HomeVideo} type='video/mp4'/>
                 </S.VideoHome>
             </S.VideoContainer>
