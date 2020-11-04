@@ -10,10 +10,12 @@ export default function Header(){
     return (
         <S.Container>
             {isMobile ?
-                    <><S.LogoContainer isMobile={isMobile}>
+                    <>
+                    <S.LogoContainer isMobile={isMobile}>
                         <img src={Logotipo} alt='logo_turpial_2'/>
                     </S.LogoContainer>
-                    <Drawer/></>
+                    <Drawer/>
+                    </>
                     :
                     <><S.LogoContainer>
                         <img src={Logo} alt='logo_turpial'/>

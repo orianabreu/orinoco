@@ -3,15 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.header`
   position: fixed;
   width:100vw;
-  padding: ${({theme})=> theme.scale.base}px;
+  padding: ${({theme})=>theme.scale.base}px;
   background-color: ${({theme})=>theme.palette.primary};
   display:flex;
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width:484px) {
-      padding: 10px;
-    }
+  padding: ${({theme, isMobile})=>isMobile && theme.scale.base}px;
 `;
 
 export const LogoContainer = styled.div`
