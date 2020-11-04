@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   position: fixed;
+  z-index: 100;
   width:100vw;
   padding: ${({theme})=>theme.scale.base}px;
   background-color: ${({theme})=>theme.palette.primary};

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const VideoHome = styled.video`
-    width: 100vw;
-    opacity: 0.6;
-    padding-top: ${({theme})=> theme.scale.base*6.5}px;
     position: absolute;
     z-index: -1;
+    height:${({isMobile})=>isMobile && '100%'};
+    width:${({isMobile})=>!isMobile && '100%'};
+    opacity: 0.6;
+    padding-top: ${({theme})=> theme.scale.base*6.5}px;
 `;
 
 export const HomeText = styled.p`
