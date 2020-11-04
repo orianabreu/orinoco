@@ -9,8 +9,6 @@ export const Container = styled.header`
   display:flex;
   align-items: center;
   justify-content: space-between;
-
-  padding: ${({theme, isMobile})=>isMobile && theme.scale.base}px;
 `;
 
 export const LogoContainer = styled.div`
