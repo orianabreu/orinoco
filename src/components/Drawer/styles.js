@@ -5,10 +5,8 @@ export const IconContainer = styled.div`
     svg{
       font-size: ${({theme})=>theme.scale.h5};
     }
-
-    @media (max-width:484px) {
-      margin-right: ${({theme})=>theme.scale.base}px;
-    }
+    margin-right: ${({theme, isMobile})=> isMobile && theme.scale.base}px;
+    
 `;
 
 export const Overlay = styled.div`
