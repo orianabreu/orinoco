@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   position: fixed;
+  z-index: 100;
   width:100vw;
-  padding: ${({theme})=> theme.scale.base*2}px;
+  padding: ${({theme})=>theme.scale.base}px ${({theme})=>theme.scale.base*2}px;
   background-color: ${({theme})=>theme.palette.primary};
   display:flex;
   align-items: center;
@@ -12,7 +13,8 @@ export const Container = styled.header`
 
 export const LogoContainer = styled.div`
   img {
-    height: ${({theme})=>theme.scale.base*6}px;
+    height: ${({theme})=>theme.scale.base*4}px;    
+    cursor: pointer; 
   }
 `;
 
