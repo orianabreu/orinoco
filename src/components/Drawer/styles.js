@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import {transparentize} from 'polished';
 
 export const IconContainer = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
     svg{
       font-size: ${({theme})=>theme.scale.h5};
-    }
-    margin-right: ${({theme, isMobile})=> isMobile && theme.scale.base}px;
-    
+    }   
 `;
 
 export const Overlay = styled.div`
@@ -51,6 +53,6 @@ export const Row = styled.div`
   
   svg{
     font-size: ${({theme})=>theme.scale.h3};
-    margin-right: none;
+    margin-right: ${({theme})=>theme.scale.base*-1}px;
   }
 `;
