@@ -1,5 +1,6 @@
 import React from 'react';
 import WindowSection from "../../components/WindowSection";
+import Button from '../../components/Button';
 import * as S from './styles';
 import HomeVideo from '../../assets/video/videohome.mp4';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
@@ -20,6 +21,7 @@ export default function Home(){
                 <S.HomeText isMobile={isMobile}>
                     Hacemos crecer tu negocio a través de marketing creativo
                 </S.HomeText>
+                <Button>QUIERO AUMENTAR MIS VENTAS</Button>
             </S.TextOverlay>
         </WindowSection>
     )

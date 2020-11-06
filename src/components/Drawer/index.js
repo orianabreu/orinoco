@@ -15,7 +15,7 @@ export default function Drawer(){
                 </S.Row>
                 <S.Row><a href='#home'>Home</a></S.Row>
                 <S.Row><a href='#services'>Servicios</a></S.Row>
-                <S.Row><a href=''>Quienes somos</a></S.Row>
+                <S.Row><a href='#'>Quienes somos</a></S.Row>
             </S.OptionsContainer>
         </S.IconContainer>
     )
