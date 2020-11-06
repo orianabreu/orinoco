@@ -17,6 +17,7 @@ const theme = {
         primary: '#fdcf08',
         dark: '#141301',
         light: '#ffffff',
+        red: '#dc004e'
     }
 };
 

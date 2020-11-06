@@ -13,7 +13,7 @@ export const Button = styled.button`
     position: absolute;
 
     &:hover {
-        background-color: ${({theme})=>theme.palette.dark};
+        background-color: ${({theme})=>theme.palette.red};
         color: ${({theme})=>theme.palette.light};
     }
 `;
