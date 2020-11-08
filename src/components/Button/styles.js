@@ -1,19 +1,24 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
+
+export const buttonTypes = {
+    callToAction:css`
+      border-radius: 4px;
+      background-color: ${({theme})=>theme.palette.primary};
+      
+      &:hover {
+        background-color: ${({theme})=>theme.palette.red};
+        color: ${({theme})=>theme.palette.light};
+    }`,
+}
 
 export const Button = styled.button`
-    background-color: ${({theme})=>theme.palette.primary};
-    color: ${({theme})=>theme.palette.dark};
-    border-radius: 20px;
+    color: ${({theme})=>theme.palette.dark};   
     font-family: ${({theme})=>theme.fonts.primary};
-    font-size: ${({theme})=>theme.scale.paragraph};
-    font-weight: 400;
+    font-size: ${({theme})=>theme.scale.paragraph};  
     cursor: pointer;
     border: none;
     padding: ${({theme})=>theme.scale.base}px ${({theme})=>theme.scale.base*2}px;
     position: absolute;
-
-    &:hover {
-        background-color: ${({theme})=>theme.palette.red};
-        color: ${({theme})=>theme.palette.light};
-    }
+    
+    ${({styleType})=> styleType && buttonTypes[styleType]};
 `;

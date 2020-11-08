@@ -17,11 +17,11 @@ export default function Home(){
                     <source src={HomeVideo} type='video/mp4'/>
                 </S.VideoHome>
             </S.VideoContainer>
-            <S.TextOverlay>
+            <S.TextOverlay isMobile={isMobile}>
                 <S.HomeText isMobile={isMobile}>
                     Hacemos crecer tu negocio a través de marketing creativo
                 </S.HomeText>
-                <Button>QUIERO AUMENTAR MIS VENTAS</Button>
+                <Button styleType='callToAction'>QUIERO AUMENTAR MIS VENTAS</Button>
             </S.TextOverlay>
         </WindowSection>
     )
