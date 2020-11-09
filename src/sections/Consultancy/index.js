@@ -8,7 +8,7 @@ export default function Consultancy(){
     const isMobile = useMediaQuery('(max-width:484px)');
     return (
         <WindowSection id='consultancy'>
-            <S.SectionText isMobile={isMobile}>
+            <S.SectionContainer isMobile={isMobile}>
                 <S.SectionTitle1 isMobile={isMobile}>
                     El marketing digital
                 </S.SectionTitle1>
@@ -23,10 +23,10 @@ export default function Consultancy(){
                     <br />
                     Si estás empezando a descubrir lo que el marketing digital puede hacer por tu negocio y <b>tienes dudas sobre qué camino seguir</b> y cuáles estrategias implementar, queremos darte algunas recomendaciones y acompañarte en el proceso.
                 </S.SectionParagraph>   
-                <Button styleType='freeConsultancy'>
+                <Button styleType='callToAction'>
                     QUIERO UNA ASESORÍA GRATIS
                 </Button> 
-            </S.SectionText>
+            </S.SectionContainer>
 
             
         </WindowSection>

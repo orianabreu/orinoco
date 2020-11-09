@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
-export const SectionText = styled.div`
+export const SectionContainer = styled.div`
     width: ${({isMobile})=>isMobile?100:37.6}%;
     padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
     margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base*8 : null}px;
+
+    & button {
+    width: ${({isMobile})=> isMobile? '100%' : 'auto'};
+    position:relative;
+    padding:${({theme})=>theme.scale.base*2}px;
+    margin-top: ${({theme})=>theme.scale.base*3}px; 
+  }
 `;
 
 export const SectionTitle1 = styled.h1`

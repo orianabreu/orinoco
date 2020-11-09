@@ -9,17 +9,6 @@ export const buttonTypes = {
         background-color: ${({theme})=>theme.palette.red};
         color: ${({theme})=>theme.palette.light};
     }`,
-
-    freeConsultancy:css`
-        border-radius: 4px;
-        background-color: ${({theme})=>theme.palette.primary};
-        font-size: ${({theme})=>theme.scale.paragraph}; 
-        margin-top: ${({theme})=>theme.scale.base*3}px;    
-      
-      &:hover {
-        background-color: ${({theme})=>theme.palette.red};
-        color: ${({theme})=>theme.palette.light}; 
-    `
 }
 
 export const Button = styled.button`

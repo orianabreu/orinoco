@@ -13,6 +13,14 @@ export const VideoHome = styled.video`
     padding-top: ${({theme})=> theme.scale.base*6.5}px;
 `;
 
+export const HomeImg = styled.img`
+    background-size: cover;
+    width: 122%;
+    height: 122%;
+    opacity: 0.6;
+    padding-top: ${({theme})=> theme.scale.base*6.5}px;
+`;
+
 export const TextOverlay = styled.div`
   position:absolute;
   left:0;
