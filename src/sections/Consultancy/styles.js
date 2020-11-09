@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const SectionText = styled.div`
     width: ${({isMobile})=>isMobile?100:37.6}%;
-    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?2:10)}px;
+    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base*8 : null}px;
 `;
 
 export const SectionTitle1 = styled.h1`
@@ -10,7 +11,7 @@ export const SectionTitle1 = styled.h1`
     font-weight: 700;
     color: ${({theme})=>theme.palette.dark};
     text-transform: uppercase;
-    font-size: ${({theme})=>theme.scale.h1};
+    font-size: ${({theme, isMobile})=>isMobile ? theme.scale.h2 : theme.scale.h1};
     text-decoration: underline;
     text-decoration-color: ${({theme})=>theme.palette.primary};
     margin-bottom: ${({theme})=>theme.scale.base}px;
@@ -22,7 +23,7 @@ export const SectionTitle2 = styled.p`
     font-weight: 700;
     color: ${({theme})=>theme.palette.dark};
     text-transform: uppercase;
-    font-size: ${({theme})=>theme.scale.h3};
+    font-size: ${({theme, isMobile})=>isMobile ? theme.scale.h5 : theme.scale.h3};
     margin-bottom: ${({theme})=>theme.scale.base*4}px;
 `;
 

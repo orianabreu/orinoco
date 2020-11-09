@@ -19,7 +19,7 @@ export default function Home(){
             </S.VideoContainer>
             <S.TextOverlay isMobile={isMobile}>
                 <S.HomeText isMobile={isMobile}>
-                    Hacemos crecer tu negocio a través de marketing creativo
+                    Hacemos crecer tu negocio con marketing creativo
                 </S.HomeText>
                 <Button styleType='callToAction'>QUIERO AUMENTAR MIS VENTAS</Button>
             </S.TextOverlay>

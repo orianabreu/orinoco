@@ -33,7 +33,7 @@ export const TextOverlay = styled.div`
   & button {
     width: ${({isMobile})=> isMobile? '100%' : 'auto'};
     position:relative;
-    padding:${({theme})=>theme.scale.base*3}px;
+    padding:${({theme})=>theme.scale.base*2}px;
   }
 `;
 
