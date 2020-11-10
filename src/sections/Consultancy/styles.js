@@ -4,7 +4,7 @@ export const SectionContainer = styled.div`
     width: ${({isMobile})=>isMobile?100:47}%;
     height: 100vh;
     padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
-    margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base : null}px;
+    margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base*8 : null}px;
     float: left;
 
     & button {
