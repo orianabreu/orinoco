@@ -41,7 +41,7 @@ export const TextOverlay = styled.div`
   & button {
     width: ${({isMobile})=> isMobile? '100%' : 'auto'};
     position:relative;
-    padding:${({theme})=>theme.scale.base*2}px;
+    padding: ${({theme})=>theme.scale.base*2}px;
   }
 `;
 
@@ -50,5 +50,6 @@ export const HomeText = styled.p`
     font-size: ${({theme, isMobile})=> isMobile? theme.scale.h2 :`${theme.scale.base*10}px`};
     font-weight: 800;
     color: ${({theme})=> theme.palette.light};   
-    margin-bottom: ${({theme})=>theme.scale.base*4}px; 
+    margin-bottom: ${({theme})=>theme.scale.base*10}px; 
+    margin-top: ${({theme})=>theme.scale.base*6}px; 
 `;
