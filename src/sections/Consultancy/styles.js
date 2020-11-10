@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
-    width: ${({isMobile})=>isMobile?100:37.6}%;
+    width: ${({isMobile})=>isMobile?100:50}%;
     padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
-    margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base*8 : null}px;
+    margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base : null}px;
+    float: left;
 
     & button {
     width: ${({isMobile})=> isMobile? '100%' : 'auto'};
@@ -40,4 +41,17 @@ export const SectionParagraph = styled.p`
     font-size: ${({theme})=>theme.scale.paragraph};
     line-height: ${({theme})=>theme.scale.h4};
     letter-spacing: 0.02rem;
+`;
+
+export const ImageContainer = styled.div`
+    width: 50%;
+    padding: ${({theme})=>theme.scale.base*4}px;
+    float: right; 
+    text-align: center;   
+`;
+
+export const IphoneImage = styled.img`
+    width: 30%;
+    transform: rotate(20deg);
+    margin-top: ${({theme})=>theme.scale.base*6}px;
 `;

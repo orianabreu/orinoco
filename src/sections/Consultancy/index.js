@@ -2,6 +2,7 @@ import React from 'react';
 import WindowSection from "../../components/WindowSection";
 import * as S from './styles';
 import Button from '../../components/Button';
+import Iphone from '../../assets/img/iphone.png';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export default function Consultancy(){
@@ -27,8 +28,13 @@ export default function Consultancy(){
                     QUIERO UNA ASESORÍA GRATIS
                 </Button> 
             </S.SectionContainer>
-
-            
+            {isMobile ?
+                null :
+                <S.ImageContainer>
+                    <S.IphoneImage src={Iphone} alt='iphone-img'/>
+                </S.ImageContainer>
+            }
+                
         </WindowSection>
     )
 }
