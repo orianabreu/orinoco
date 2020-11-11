@@ -6,6 +6,8 @@ export const SectionContainer = styled.div`
     width: 100vw;
     background-color: ${({theme})=> theme.palette.dark};
     text-align: center;
+    position: relative;
+    z-index: -1;
 `;
 
 export const SectionTitle = styled.h1`
