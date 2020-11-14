@@ -15,13 +15,16 @@ export const TextContainer = styled.div`
     padding: ${({theme})=> theme.scale.base*2}px;  
     margin-top: -${({theme})=>theme.scale.base*2}px;
     height: 200px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 `;
 
 export const Title = styled.h3`
     color: ${({theme})=> theme.palette.dark};
     font-family: ${({theme})=>theme.fonts.primary};
     font-size: ${({theme})=>theme.scale.h3};
-    margin: 0 0 ${({theme})=> theme.scale.base*3}px 0;
+    margin-bottom: ${({theme})=> theme.scale.base*2}px;
     text-decoration: underline;
     text-decoration-color: ${({theme})=> theme.palette.primary};
 `;

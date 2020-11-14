@@ -27,13 +27,13 @@ export default function Services(){
                     <ServiceCard 
                         image={BrandingImg}
                         title='Diseño'
-                        description='Diseño gráfico, branding, identidad de marca, logo, fotografía de producto.'
+                        description='Diseño gráfico adaptado a tus necesidades, diseño web, branding, identidad de marca, logo, fotografía de producto.'
                     />
 
                     <ServiceCard 
                         image={WebImg}
                         title='Web'
-                        description='Diseño y desarrollo de webs y apps (IOs - Android), blogs, e-commerce.'
+                        description='Desarrollo de sitios web, applicaciones (IOs - Android), blogs, e-commerce, landing page. UI/UX. Soluciones personalizadas. '
                     />
                </S.ServicesContainer>
 
