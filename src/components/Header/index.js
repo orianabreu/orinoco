@@ -24,7 +24,7 @@ export default function Header(){
                         <S.NavList>
                             <li><a href='#home'>Home</a></li>
                             <li><a href='#services'>Servicios</a></li>
-                            <li><a href=''>Quienes somos</a></li>
+                            <li><a href='#'>Quienes somos</a></li>
                         </S.NavList>
                     </nav></>
             }
