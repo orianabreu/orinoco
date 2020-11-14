@@ -1,18 +1,23 @@
 import styled from 'styled-components';
+import Iphone from '../../assets/img/iphone.png';
 
 export const SectionContainer = styled.div`
-    width: ${({isMobile})=>isMobile?100:47}%;
-    height: 100vh;
-    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
-    margin-bottom: ${({theme, isMobile})=>isMobile ? theme.scale.base*8 : null}px;
-    float: left;
+    display:flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
 
     & button {
-    width: ${({isMobile})=> isMobile? '100%' : 'auto'};
-    position:relative;
-    padding:${({theme})=>theme.scale.base*2}px;
-    margin-top: ${({theme})=>theme.scale.base*6}px;
-  }
+        width: ${({isMobile})=> isMobile? '100%' : 'auto'};
+        position:relative;
+        padding:${({theme})=>theme.scale.base*2}px;
+        margin-top: ${({theme})=>theme.scale.base*6}px;
+    }
+`;
+
+export const OnboardingContainer = styled.div`
+    /* max-width: 20%; */
+    padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;
 `;
 
 export const SectionTitle1 = styled.h1`
@@ -46,15 +51,17 @@ export const SectionParagraph = styled.p`
 `;
 
 export const ImageContainer = styled.div`
-    width: 50%;
+    /* width: 70vw; */
     height: 100vh;
-    padding: ${({theme})=>theme.scale.base*4}px;
-    float: right; 
     text-align: center;   
+    padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;    
+    overflow: hidden;
 `;
 
-export const IphoneImage = styled.img`
-    width: 45%;
-    transform: rotate(20deg);
-    margin-top: ${({theme})=>theme.scale.base*6}px;
+export const IphoneImage = styled.div`
+    background-image: url(${Iphone});
+    width: 337px;
+    height: 662px;
+    /* transform: rotate(20deg); */
+
 `;

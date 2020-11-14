@@ -30,7 +30,7 @@ export default function Home(){
                 <S.HomeText isMobile={isMobile}>
                     Hacemos crecer tu negocio con marketing creativo
                 </S.HomeText>
-                <Button styleType='callToAction'>QUIERO AUMENTAR MIS VENTAS</Button>
+                <Button styleType='callToAction' isMobile={isMobile}>QUIERO AUMENTAR MIS VENTAS</Button>
             </S.TextOverlay>
         </WindowSection>
     )

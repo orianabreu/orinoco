@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const VideoContainer = styled.div`
   overflow: hidden;
   max-height: 100vh;
-  max-width: 100vw;  
+  max-width: 100%;  
 `;
 
 export const VideoHome = styled.video`
@@ -29,9 +29,9 @@ export const TextOverlay = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width:100vw;
+  width:100%;
   height:100vh;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.7);
   padding: ${({theme, isMobile})=> isMobile? theme.scale.base*3:theme.scale.base*12}px;
   
   & p{

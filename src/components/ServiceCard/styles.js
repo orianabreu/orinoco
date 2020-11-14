@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const ServiceContainer = styled.div`
-    background-color: red;
-    width: 24%;
-    height: 60%;
-    position: absolute;
-    margin: ${({theme})=> theme.scale.base*12}px ${({theme})=> theme.scale.base*4}px 0 ${({theme})=> theme.scale.base*4}px;
-    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    width: ${({isMobile})=> isMobile ? '100%' : '24%'};
+    margin-bottom: ${({theme, isMobile})=> isMobile ? `${theme.scale.base*6}px` : null};
 `;
 
 export const TextContainer = styled.div`
+    width: calc(100% - ${({theme})=>theme.scale.base*4}px);
+    text-align: center;
     background-color: ${({theme})=> theme.palette.light};
-    width: 60%;
-    height: 35%;
-    padding: ${({theme})=> theme.scale.base*2}px;
-    display: inline-block;
+    padding: ${({theme})=> theme.scale.base*2}px;  
+    margin-top: -${({theme})=>theme.scale.base*2}px;
+    height: 200px;
 `;
 
 export const Title = styled.h3`
@@ -32,6 +32,6 @@ export const Description = styled.p`
     font-size: ${({theme})=>theme.scale.paragraph};
 `;
 
-export const ImageService = styled.img`
-    width: 80%;
+export const ServiceImage = styled.img`
+    width: 100%;
 `;

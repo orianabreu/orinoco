@@ -2,7 +2,7 @@ import React from 'react';
 import WindowSection from "../../components/WindowSection";
 import * as S from './styles';
 import Button from '../../components/Button';
-import Iphone from '../../assets/img/iphone.png';
+// import Iphone from '../../assets/img/iphone.png';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 export default function Consultancy(){
@@ -10,9 +10,10 @@ export default function Consultancy(){
     return (
         <WindowSection id='consultancy'>
             <S.SectionContainer isMobile={isMobile}>
-                <S.SectionTitle1 isMobile={isMobile}>
-                    El marketing digital
-                </S.SectionTitle1>
+                <S.OnboardingContainer isMobile={isMobile}>
+                    <S.SectionTitle1 isMobile={isMobile}>
+                        El marketing digital
+                    </S.SectionTitle1>
                 <S.SectionTitle2 isMobile={isMobile}>
                     puede ser fácil a simple vista, 
                     pero realmente no lo es
@@ -27,14 +28,15 @@ export default function Consultancy(){
                 <Button styleType='callToAction'>
                     QUIERO UNA ASESORÍA GRATIS
                 </Button> 
-            </S.SectionContainer>
-            {isMobile ?
+                </S.OnboardingContainer>
+                {isMobile ?
                 null :
                 <S.ImageContainer>
-                    <S.IphoneImage src={Iphone} alt='iphone-img'/>
+                    <S.IphoneImage />
+                    {/* <S.IphoneImage src={Iphone} alt='iphone-img'/> */}
                 </S.ImageContainer>
             }
-                
+            </S.SectionContainer>                        
         </WindowSection>
     )
 }
