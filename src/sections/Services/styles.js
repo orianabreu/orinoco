@@ -36,5 +36,5 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     align-items: flex-start;
     padding: ${({theme})=>theme.scale.base*2}px;
-    margin-top: ${({theme})=>theme.scale.base*7}px;
+    margin-top: ${({theme, isMobile})=> isMobile ? 0 : `${theme.scale.base*7}px`};
 `;
