@@ -16,7 +16,7 @@ export const SectionContainer = styled.div`
 `;
 
 export const OnboardingContainer = styled.div`
-    /* max-width: 20%; */
+    max-width: ${({display})=> display ? '100%' : '60%'};
     padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;
 `;
 
@@ -33,7 +33,7 @@ export const SectionTitle1 = styled.h1`
 `;
 
 export const SectionTitle2 = styled.p`
-    width:100%;
+    width: 100%;
     font-family: ${({theme})=>theme.fonts.primary};
     font-weight: 700;
     color: ${({theme})=>theme.palette.dark};
@@ -50,18 +50,20 @@ export const SectionParagraph = styled.p`
     letter-spacing: 0.02rem;
 `;
 
-export const ImageContainer = styled.div`
-    /* width: 70vw; */
-    height: 100vh;
-    text-align: center;   
-    padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;    
+export const ImageContainer = styled.div` 
+    padding:${({theme})=> theme.scale.base*10}px;    
     overflow: hidden;
+    display: ${({display})=>display? "flex" : "none"};
+    align-items: center;
 `;
 
 export const IphoneImage = styled.div`
     background-image: url(${Iphone});
+    background-size: contain;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 337px;
     height: 662px;
-    /* transform: rotate(20deg); */
-
+    transform: rotate(20deg);
 `;
