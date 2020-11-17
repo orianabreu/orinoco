@@ -16,7 +16,7 @@ export const SectionContainer = styled.div`
 `;
 
 export const OnboardingContainer = styled.div`
-    max-width: 60%;
+    max-width: ${({isOnCustomBreakpoint})=>isOnCustomBreakpoint?60:100}%;
     padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;
 `;
 
@@ -52,14 +52,12 @@ export const SectionParagraph = styled.p`
 
 export const ImageContainer = styled.div` 
     padding:${({theme})=> theme.scale.base*10}px;    
-    overflow: hidden;
-    display: ${({display})=>display? "flex" : "none"};
+    display: ${({shouldShow})=>shouldShow? "flex" : "none"};
     align-items: center;
 `;
 
 export const IphoneImage = styled.div`
     background-image: url(${Iphone});
-    background-size: contain;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

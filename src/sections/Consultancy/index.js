@@ -13,7 +13,7 @@ export default function Consultancy(){
 
             <S.SectionContainer isMobile={isMobile}>
 
-                <S.OnboardingContainer isMobile={isMobile}>
+                <S.OnboardingContainer isMobile={isMobile} isOnCustomBreakpoint={customBreakpoint}>
                     <S.SectionTitle1 isMobile={isMobile}>
                         El marketing digital
                     </S.SectionTitle1>
@@ -39,7 +39,7 @@ export default function Consultancy(){
 
                 {isMobile ?
                     null :
-                    <S.ImageContainer display={customBreakpoint}> 
+                    <S.ImageContainer shouldShow={customBreakpoint}>
                         <S.IphoneImage />
                     </S.ImageContainer>
                 }
