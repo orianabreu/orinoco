@@ -37,7 +37,7 @@ export default function Services(){
                     />
                </S.ServicesContainer>
 
-                <S.ButtonContainer>
+                <S.ButtonContainer isMobile={isMobile}>
                     <Button styleType='callToAction'>
                         QUIERO SABER MÁS
                     </Button>
