@@ -16,7 +16,7 @@ export const SectionContainer = styled.div`
 `;
 
 export const OnboardingContainer = styled.div`
-    max-width: ${({display})=> display ? '100%' : '60%'};
+    max-width: 60%;
     padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;
 `;
 
