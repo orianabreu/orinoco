@@ -15,6 +15,7 @@ export const LogoContainer = styled.div`
   img {
     height: ${({theme})=>theme.scale.base*4}px;    
     cursor: pointer; 
+    margin-top: ${({theme, isMobile})=> isMobile && theme.scale.base}px;
   }
 `;
 
