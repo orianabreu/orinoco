@@ -6,6 +6,7 @@ import Consultancy from "../../sections/Consultancy";
 import Services from "../../sections/Services";
 import ChatButton from '../../components/ChatButton';
 import KnowUs from '../../sections/KnowUs';
+import ConsultancyForm from '../../sections/Form';
 
 export default function Main(){
     return (
@@ -14,6 +15,7 @@ export default function Main(){
             <Consultancy/>
             <Services/>
             <KnowUs />
+            <ConsultancyForm />
             <ChatButton />
             <Footer/>
         </MainContainer>
