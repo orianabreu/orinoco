@@ -4,16 +4,17 @@ import theme from './theme';
 import GlobalStyle from "./theme/global";
 import Main from "./pages/Main";
 import Header from "./components/Header";
+import './App.css';
 
 function App() {
   return (
-    <div>
+      <div>
         <GlobalStyle/>
         <ThemeProvider theme={theme}>
-            <Header/>
-            <Main/>
+          <Header/>
+          <Main/>
         </ThemeProvider>
-    </div>
+      </div>
   );
 }
 
