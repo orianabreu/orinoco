@@ -1,8 +1,12 @@
 import React from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 export default function ConsultancyForm() {
+
+    const isMobile = useMediaQuery('(max-width:484px)');
+
     return (
         <WindowSection id='myform'>
 
@@ -10,7 +14,7 @@ export default function ConsultancyForm() {
                 ¡Bienvenido al mundo digital! 
             </S.SectionTitle>
 
-            <S.FormContainer>
+            <S.FormContainer isMobile={isMobile}>
                 {/* <form> */}
                     <S.InputArea>
                         <S.Question>
@@ -48,6 +52,14 @@ export default function ConsultancyForm() {
                         />
                     </S.InputArea>
 
+                    <S.InputArea>
+                        <S.Question>
+                            ¿A qué se dedica tu negocio?
+                        </S.Question>
+                        <S.NewInput 
+                            placeholder='Ej: Somos una agencia de marketing digital'
+                        />
+                    </S.InputArea>
                     
                 {/* </form> */}
             </S.FormContainer>

@@ -15,7 +15,8 @@ export const SectionTitle = styled.h1`
 
 export const FormContainer = styled.div`
     padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
-    /* display: flex; */
+    display: grid;
+    grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
 `;
 
 export const InputArea = styled.div`
@@ -23,7 +24,7 @@ export const InputArea = styled.div`
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
-    width: 500px;
+    margin: auto auto ${({theme})=> theme.scale.base*2}px auto;
 `;
 
 export const Question = styled.p`
@@ -39,7 +40,7 @@ export const NewInput = styled.input`
     border-radius: 4px;
     font-family: ${({theme})=>theme.fonts.secondary};
     padding: 10px 15px;
-    margin: 0 auto 10px auto;
+    margin: 10px auto 10px auto;
     display: block;
     text-align: center;
     font-size: ${({theme})=>theme.scale.paragraph};
@@ -50,3 +51,4 @@ export const NewInput = styled.input`
         border-color: ${({theme})=> theme.palette.primary};
     }
 `;
+
