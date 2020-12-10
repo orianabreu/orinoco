@@ -9,12 +9,23 @@ export default function ConsultancyForm() {
 
     return (
         <WindowSection id='myform'>
-        
-            <S.SectionTitle>
-                ¡Bienvenido al mundo digital! 
-            </S.SectionTitle>
 
-            <S.FormContainer isMobile={isMobile}>
+            <S.OnboardingContainer isMobile={isMobile}>
+            
+                <S.SectionTitle>
+                    ¡Bienvenido al mundo digital! 
+                </S.SectionTitle>
+
+                <S.SeccionText>
+                    Has dado el primer paso para hacer crecer tu negocio y con ello tus ganancias.<br/>Te damos las gracias por permitirnos acompañarte en el proceso. 
+                    <br/>
+                    <br/>
+                    Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita.<br/>¡Estamos ansiosos por conocerte!
+                </S.SeccionText>
+            
+            </S.OnboardingContainer>
+
+            <S.FormContainer1 isMobile={isMobile}>
                 {/* <form> */}
                     <S.InputArea>
                         <S.Question>
@@ -86,7 +97,7 @@ export default function ConsultancyForm() {
                     </S.InputArea>
                     
                 {/* </form> */}
-            </S.FormContainer>
+            </S.FormContainer1>
 
         </WindowSection>
     )

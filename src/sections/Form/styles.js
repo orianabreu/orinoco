@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const OnboardingContainer = styled.div`
+    padding: ${({theme})=> theme.scale.base*8}px ${({theme,isMobile})=>theme.scale.base*(isMobile?4:6)}px 0 ${({theme,isMobile})=>theme.scale.base*(isMobile?4:6)}px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
 export const SectionTitle = styled.h1`
     color: ${({theme})=> theme.palette.dark};
     font-family: ${({theme})=>theme.fonts.primary};
@@ -8,25 +16,22 @@ export const SectionTitle = styled.h1`
     text-transform: uppercase;
     text-decoration: underline;
     text-decoration-color: ${({theme})=> theme.palette.primary};
-    width: 100vw;
     text-align: center;
-    padding: ${({theme})=> theme.scale.base*6}px 0 ${({theme})=> theme.scale.base*6}px 0;
+    margin-bottom: ${({theme})=> theme.scale.base*6}px;
 `;
 
-export const FormContainer = styled.div`
-    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+export const SeccionText = styled.p`
+    font-family: ${({theme})=>theme.fonts.secondary};
+    font-size: ${({theme})=> theme.scale.paragraph};
+    text-align: center;
+`;
+
+export const FormContainer1 = styled.div`
+    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:8)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
     display: grid;
     grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
-    /* grid-template:
-        "sidebar content"
-        "sidebar content"
-        "bigColumn bigColumn"; */
     justify-content: center;
-    overflow: ${({isMobile})=> isMobile ? "hidden" : null};
-
-    & .bigColumn{
-        grid-column: 1/-1;
-    }
+    overflow: hidden;
 `;
 
 export const InputArea = styled.div`
@@ -80,5 +85,9 @@ export const BigInput = styled.input`
     &:focus {
         outline: none;
         border-color: ${({theme})=> theme.palette.primary};
+    }
+
+    &:placeholder-shown{
+        text-overflow: ellipsis;
     }
 `;
