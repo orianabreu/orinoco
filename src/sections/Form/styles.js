@@ -27,11 +27,19 @@ export const SeccionText = styled.p`
 `;
 
 export const FormContainer1 = styled.div`
-    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:8)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:8)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?1:3)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
     display: grid;
     grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
     justify-content: center;
     overflow: hidden;
+`;
+
+export const FormContainer2 = styled.div`
+    padding: 0 ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const InputArea = styled.div`

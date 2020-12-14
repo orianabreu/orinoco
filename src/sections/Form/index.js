@@ -26,7 +26,6 @@ export default function ConsultancyForm() {
             </S.OnboardingContainer>
 
             <S.FormContainer1 isMobile={isMobile}>
-                {/* <form> */}
                     <S.InputArea>
                         <S.Question>
                             Nombre y Apellido:
@@ -63,6 +62,9 @@ export default function ConsultancyForm() {
                         />
                     </S.InputArea>
 
+            </S.FormContainer1>
+
+            <S.FormContainer2 isMobile={isMobile}>
                     <S.InputArea>
                         <S.Question>
                             ¿A qué se dedica tu negocio?
@@ -95,9 +97,8 @@ export default function ConsultancyForm() {
                             placeholder='Ej: turpialdigital.com / @turpialdigital_agencia'
                         />
                     </S.InputArea>
-                    
-                {/* </form> */}
-            </S.FormContainer1>
+            </S.FormContainer2>        
+            
 
         </WindowSection>
     )
