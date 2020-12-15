@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Calendar from '../../components/Calendar';
 
 export default function ConsultancyForm() {
 
@@ -97,6 +98,23 @@ export default function ConsultancyForm() {
                             placeholder='Ej: turpialdigital.com / @turpialdigital_agencia'
                         />
                     </S.InputArea>
+
+                    <S.SeccionText>
+                        <b>Selecciona la fecha y hora de tu preferencia.</b>
+                        <br/>
+                        Podemos contactarte los días lunes, miércoles y viernes entre las 10:00 y 12:00 y entre las 18:00 y las 20:00 (hora España).
+                    </S.SeccionText>
+
+                    <S.FormContainer1 isMobile={isMobile}>
+
+                        <S.InputArea>
+                            <S.Question>
+                                Fecha
+                            </S.Question>
+                            <Calendar />
+                        </S.InputArea>
+                        
+                    </S.FormContainer1>
             </S.FormContainer2>        
             
 
