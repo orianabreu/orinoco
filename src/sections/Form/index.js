@@ -105,7 +105,9 @@ export default function ConsultancyForm() {
                             Selecciona la fecha y hora de tu preferencia.
                         </S.Question> 
                         <br/>
-                        Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b>
+                            Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b>
+                        <br/>
+                            La llamada tendrá una duración de 30 minutos.
                     </S.SeccionText2>
 
                         <S.Container>
