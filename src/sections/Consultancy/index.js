@@ -4,7 +4,7 @@ import * as S from './styles';
 import Button from '../../components/Button';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-export default function Consultancy(){
+export default function Consultancy({setFormIsOpen}){
     const isMobile = useMediaQuery('(max-width:484px)');
     const customBreakpoint = useMediaQuery('(min-width:1216px)');
 
@@ -31,7 +31,7 @@ export default function Consultancy(){
                         Si estás empezando a descubrir lo que el marketing digital puede hacer por tu negocio y <b>tienes dudas sobre qué camino seguir</b> y cuáles estrategias implementar, queremos darte algunas recomendaciones y acompañarte en el proceso.
                     </S.SectionParagraph> 
 
-                    <Button styleType='callToAction'>
+                    <Button styleType='callToAction' onClick={()=>{setFormIsOpen(prevState=>!prevState)}}>
                         QUIERO UNA ASESORÍA GRATIS
                     </Button> 
 
