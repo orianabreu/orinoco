@@ -4,7 +4,6 @@ import Iphone from '../../assets/img/iphone.png';
 export const SectionContainer = styled.div`
     display:flex;
     width: 100%;
-    min-height: 100vh;
     overflow-x: hidden;
 
     & button {
@@ -17,7 +16,7 @@ export const SectionContainer = styled.div`
 
 export const OnboardingContainer = styled.div`
     max-width: ${({isOnCustomBreakpoint})=>isOnCustomBreakpoint?60:100}%;
-    padding:${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    padding: ${({theme,isMobile})=>theme.scale.base*(isMobile?4:7)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?6:7)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?4:10)}px;
 `;
 
 export const SectionTitle1 = styled.h1`
@@ -54,6 +53,9 @@ export const ImageContainer = styled.div`
     padding:${({theme})=> theme.scale.base*10}px;    
     display: ${({shouldShow})=>shouldShow? "flex" : "none"};
     align-items: center;
+    z-index: -1;
+    position: absolute;
+    right: 50px;
 `;
 
 export const IphoneImage = styled.div`

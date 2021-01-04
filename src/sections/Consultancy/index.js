@@ -9,7 +9,7 @@ export default function Consultancy(){
     const customBreakpoint = useMediaQuery('(min-width:1216px)');
 
     return (
-        <WindowSection id='consultancy'>
+        // <WindowSection id='consultancy'>
 
             <S.SectionContainer isMobile={isMobile}>
 
@@ -28,7 +28,7 @@ export default function Consultancy(){
                         Una cosa es cierta: hoy, más que nunca, <b>tener una presencia sólida en Internet es indispensable.</b>                
                         <br />
                         <br />
-                        Si estás empezando a descubrir lo que el marketing digital puede hacer por tu negocio y <b>tienes dudas sobre qué camino seguir</b> y cuáles estrategias implementar, queremos darte algunas recomendaciones y acompañarte en el proceso.
+                        Si estás empezando a descubrir lo que el marketing digital puede hacer por tu negocio, <b>tienes dudas sobre qué camino seguir</b> y cuáles estrategias implementar, queremos darte algunas recomendaciones y acompañarte en el proceso. Agenda una asesoría GRATIS con nosotros.
                     </S.SectionParagraph> 
 
                     <Button styleType='callToAction'>
@@ -44,6 +44,6 @@ export default function Consultancy(){
                     </S.ImageContainer>
                 }
             </S.SectionContainer>                        
-        </WindowSection>
+        // </WindowSection>
     )
 }
