@@ -99,3 +99,5 @@ export const BigInput = styled.input`
         text-overflow: ellipsis;
     }
 `;
+
+export default NewInput;

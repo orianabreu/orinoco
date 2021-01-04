@@ -18,8 +18,7 @@ const theme = {
         dark: '#141301',
         light: '#ffffff',
         red: '#E55934',
-        whatsapp: '#25d366',
-        grey: '#C0C5C1'
+        whatsapp: '#25d366'
     }
 };
 
