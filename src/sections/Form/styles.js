@@ -26,8 +26,15 @@ export const SeccionText = styled.p`
     text-align: center;
 `;
 
+export const SeccionText2 = styled.p`
+    font-family: ${({theme})=>theme.fonts.secondary};
+    font-size: ${({theme})=> theme.scale.paragraph};
+    text-align: center;
+    margin: ${({theme})=> theme.scale.base}px auto;
+`;
+
 export const FormContainer1 = styled.div`
-    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:8)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?1:3)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:8)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?1:1)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
     display: grid;
     grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
     justify-content: center;
@@ -98,6 +105,13 @@ export const BigInput = styled.input`
     &:placeholder-shown{
         text-overflow: ellipsis;
     }
+`;
+
+export const Container = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
 `;
 
 export default NewInput;

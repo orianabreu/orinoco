@@ -3,6 +3,7 @@ import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
+import Button from '../../components/Button';
 
 export default function ConsultancyForm() {
 
@@ -99,20 +100,24 @@ export default function ConsultancyForm() {
                         />
                     </S.InputArea>
 
-                    <S.SeccionText>
-                        <b>Selecciona la fecha y hora de tu preferencia.</b>
-                        <br/>
+                    <S.SeccionText2>
+                        <S.Question>
+                            Selecciona la fecha y hora de tu preferencia.
+                        </S.Question> 
                         <br/>
                         Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b>
-                    </S.SeccionText>
+                    </S.SeccionText2>
 
-                    <S.FormContainer1 isMobile={isMobile}>
-
-                        <S.InputArea>
+                        <S.Container>
                             <DateAndTimePicker />
-                        </S.InputArea>
+                        </S.Container>
+
+                        <S.Container>
+                            <Button styleType='callToAction'>
+                                AGENDAR
+                            </Button>
+                        </S.Container>
                         
-                    </S.FormContainer1>
             </S.FormContainer2>        
             
 
