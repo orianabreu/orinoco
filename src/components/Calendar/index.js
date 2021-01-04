@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import DatePicker, {CalendarContainer} from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import NewInput from '../../sections/Form/styles';
+import Button from '../Button';
 
 export default function Calendar() {
     const [startDate, setStartDate] = useState(new Date());
 
     const ExampleCustomInput = ({ value, onClick }) => (
-        <NewInput onClick={onClick}>
-            {/* {value} */}
-        </NewInput>
+        <Button onClick={onClick}>
+            {value}
+        </Button>
     );
 
     const MyContainer = ({ className, children }) => {
