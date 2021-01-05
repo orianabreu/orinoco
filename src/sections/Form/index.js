@@ -18,14 +18,12 @@ export default function ConsultancyForm() {
                     ¡Bienvenido al mundo digital! 
                 </S.SectionTitle>
 
-                <S.SeccionText>
-                    Has dado el primer paso para hacer crecer tu negocio y con ello tus ganancias.<br/>Te damos las gracias por permitirnos acompañarte en el proceso. 
+                <S.SeccionText isMobile={isMobile}>
+                    Has dado el primer paso para hacer crecer tu negocio y con ello tus ganancias. Te damos las gracias por permitirnos acompañarte en el proceso. 
                     <br/>
                     <br/>
-                    Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita.<br/>¡Estamos ansiosos por conocerte!
+                    Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita. ¡Estamos ansiosos por conocerte!
                 </S.SeccionText>
-            
-            </S.OnboardingContainer>
 
             <S.FormContainer1 isMobile={isMobile}>
                     <S.InputArea>
@@ -100,15 +98,13 @@ export default function ConsultancyForm() {
                         />
                     </S.InputArea>
 
-                    <S.SeccionText2>
-                        <S.Question>
-                            Selecciona la fecha y hora de tu preferencia.
-                        </S.Question> 
+                    <S.Question>
+                        Selecciona la fecha y hora de tu preferencia.
+                    </S.Question>
+                    <S.SeccionText>
                         <br/>
-                            Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b>
-                        <br/>
-                            La llamada tendrá una duración de 30 minutos.
-                    </S.SeccionText2>
+                        Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b> La llamada tendrá una duración de 30 minutos.
+                    </S.SeccionText>
 
                         <S.Container>
                             <DateAndTimePicker />
@@ -122,7 +118,7 @@ export default function ConsultancyForm() {
                         
             </S.FormContainer2>        
             
-
+            </S.OnboardingContainer>
         </WindowSection>
     )
 }

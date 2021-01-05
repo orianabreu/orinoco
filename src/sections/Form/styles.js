@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OnboardingContainer = styled.div`
-    padding: ${({theme})=> theme.scale.base*8}px ${({theme,isMobile})=>theme.scale.base*(isMobile?4:6)}px 0 ${({theme,isMobile})=>theme.scale.base*(isMobile?4:6)}px;
+    padding: ${({theme})=> theme.scale.base*12}px ${({theme,isMobile})=>theme.scale.base*(isMobile?5:34)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?2:3)}px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,36 +17,27 @@ export const SectionTitle = styled.h1`
     text-decoration: underline;
     text-decoration-color: ${({theme})=> theme.palette.primary};
     text-align: center;
-    margin-bottom: ${({theme})=> theme.scale.base*6}px;
+    margin-bottom: ${({theme})=> theme.scale.base*5}px;
 `;
 
 export const SeccionText = styled.p`
     font-family: ${({theme})=>theme.fonts.secondary};
     font-size: ${({theme})=> theme.scale.paragraph};
-    text-align: center;
-`;
-
-export const SeccionText2 = styled.p`
-    font-family: ${({theme})=>theme.fonts.secondary};
-    font-size: ${({theme})=> theme.scale.paragraph};
-    text-align: center;
-    margin: ${({theme})=> theme.scale.base}px auto;
+    text-align: justify;
 `;
 
 export const FormContainer1 = styled.div`
-    padding: ${({theme, isMobile})=>theme.scale.base*(isMobile?4:8)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?1:1)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    padding: ${({theme})=>theme.scale.base*4}px 0 0;
     display: grid;
-    grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
-    justify-content: center;
-    overflow: hidden;
+    grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "400px 400px"};
 `;
 
 export const FormContainer2 = styled.div`
-    padding: 0 ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
+    padding: 0 ${({theme, isMobile})=>theme.scale.base*(isMobile?6:10)}px ${({theme, isMobile})=>theme.scale.base*(isMobile?4:10)}px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 `;
 
 export const InputArea = styled.div`
@@ -72,7 +63,6 @@ export const NewInput = styled.input`
     padding: 10px 15px;
     margin: 10px auto 10px auto;
     display: block;
-    text-align: center;
     font-size: ${({theme})=>theme.scale.paragraph};
     color: ${({theme})=> theme.palette.dark};
 
@@ -85,14 +75,13 @@ export const NewInput = styled.input`
 export const BigInput = styled.input`
     border: 1px solid ${({theme})=> theme.palette.grey};
     background-color: ${({theme})=> theme.palette.grey};
-    width: ${({isMobile})=> isMobile ? "300px" : "500px"};
-    height: 100px;
+    width: ${({isMobile})=> isMobile ? "300px" : "800px"};
+    height: ${({isMobile})=> isMobile ? "100px" : "auto"};
     border-radius: 4px;
     font-family: ${({theme})=>theme.fonts.secondary};
     padding: 10px 15px;
     margin: 10px auto 10px auto;
     display: block;
-    text-align: center;
     font-size: ${({theme})=>theme.scale.paragraph};
     color: ${({theme})=> theme.palette.dark};
     overflow: hidden;
@@ -100,10 +89,6 @@ export const BigInput = styled.input`
     &:focus {
         outline: none;
         border-color: ${({theme})=> theme.palette.primary};
-    }
-
-    &:placeholder-shown{
-        text-overflow: ellipsis;
     }
 `;
 
