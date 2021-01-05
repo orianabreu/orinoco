@@ -24,6 +24,8 @@ export default function ConsultancyForm() {
                     <br/>
                     Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita. ¡Estamos ansiosos por conocerte!
                 </S.SeccionText>
+            
+            </S.OnboardingContainer>
 
             <S.FormContainer1 isMobile={isMobile}>
                     <S.InputArea>
@@ -118,7 +120,7 @@ export default function ConsultancyForm() {
                         
             </S.FormContainer2>        
             
-            </S.OnboardingContainer>
+            
         </WindowSection>
     )
 }

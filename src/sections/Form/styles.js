@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OnboardingContainer = styled.div`
-    padding: ${({theme})=> theme.scale.base*12}px ${({theme,isMobile})=>theme.scale.base*(isMobile?5:34)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?2:3)}px !important;
+    padding: ${({theme})=> theme.scale.base*12}px ${({theme,isMobile})=>theme.scale.base*(isMobile?5:34)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?2:3)}px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,8 @@ export const SeccionText = styled.p`
 export const FormContainer1 = styled.div`
     padding: ${({theme})=>theme.scale.base*4}px 0 0;
     display: grid;
-    grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "400px 400px"};
+    grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
+    
 `;
 
 export const FormContainer2 = styled.div`
@@ -95,8 +96,8 @@ export const BigInput = styled.input`
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 30px;
+    justify-content: flex-start;
+    padding: 25px 0;
 `;
 
 export default NewInput;
