@@ -9,17 +9,33 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import FilledInput from '@material-ui/core/FilledInput';
+import clsx from 'clsx';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
-        margin: theme.spacing(2),
-        width: '31ch',
+        margin: theme.spacing(1),
+        width: '25ch',
       },
     },
+  }));
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    margin: {
+      margin: theme.spacing(1),
+    },
+    withoutLabel: {
+      marginTop: theme.spacing(3),
+    },
+    textField: {
+      width: '25ch',
+    },
   }),
-);
+  );
 
 export default function ConsultancyForm() {
 
@@ -68,12 +84,12 @@ export default function ConsultancyForm() {
                         />
                     </div>
                     <div>
-                        <FormControl fullWidth className={classes.margin} variant="filled">
+                        <FormControl fullWidth className={clsx(classes.margin, classes.withoutLabel, classes.textField)} variant="filled">
                             <InputLabel>Nombre de tu Negocio</InputLabel>
                             <FilledInput id="filled-adornment-amount"/>
                         </FormControl>
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
+                        <FormControl fullWidth className={clsx(classes.margin, classes.textField)} variant="filled">
                             <InputLabel>¿A qué se dedica tu negocio?</InputLabel>
                             <FilledInput 
                             id="filled-multiline-static"
@@ -85,7 +101,7 @@ export default function ConsultancyForm() {
                             />
                         </FormControl>
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
+                        <FormControl fullWidth className={clsx(classes.margin, classes.textField)} variant="filled">
                             <InputLabel>¿Qué te gustaría lograr con esta asesoría?</InputLabel>
                             <FilledInput 
                             id="filled-multiline-static"
@@ -120,13 +136,13 @@ export default function ConsultancyForm() {
                         <DateAndTimePicker />
                     </S.Container>
 
-            </S.OnboardingContainer>
+                    <S.Container>
+                        <Button styleType='callToAction'>
+                            AGENDAR
+                        </Button>
+                    </S.Container>
 
-                 <S.Container>
-                    <Button styleType='callToAction'>
-                        AGENDAR
-                    </Button>
-                </S.Container>
+            </S.OnboardingContainer>
 
         </WindowSection>
     )

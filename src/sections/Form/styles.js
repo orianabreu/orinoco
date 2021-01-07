@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OnboardingContainer = styled.div`
-    padding: ${({isMobile}) => isMobile ? 20 : 7}% ${({isMobile}) => isMobile ? 10 : 17}% ${({isMobile}) => isMobile ? 5 : 3}%;
+    padding: ${({isMobile}) => isMobile ? 20 : 7}% ${({isMobile}) => isMobile ? 10 : 17}% ${({isMobile}) => isMobile ? 5 : 2}%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +111,12 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 10px;
+    margin-bottom: 40px;
+
+    & button {
+        margin-top: 20px;
+    }
 `;
 
 export default NewInput;
