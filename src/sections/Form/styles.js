@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const OnboardingContainer = styled.div`
-    padding: ${({theme})=> theme.scale.base*8}px ${({theme,isMobile})=>theme.scale.base*(isMobile?4:6)}px 0 ${({theme,isMobile})=>theme.scale.base*(isMobile?4:6)}px;
+    padding: ${({isMobile}) => isMobile ? 20 : 7}% ${({isMobile}) => isMobile ? 10 : 17}% ${({isMobile}) => isMobile ? 5 : 3}%;
+    // padding: ${({theme})=> theme.scale.base*12}px ${({theme,isMobile})=>theme.scale.base*(isMobile?5:34)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?2:3)}px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +24,8 @@ export const SectionTitle = styled.h1`
 export const SeccionText = styled.p`
     font-family: ${({theme})=>theme.fonts.secondary};
     font-size: ${({theme})=> theme.scale.paragraph};
-    text-align: center;
+    text-align: justify;
+    margin-bottom: ${({theme})=> theme.scale.base*5}px;
 `;
 
 export const SeccionText2 = styled.p`
@@ -38,7 +40,6 @@ export const FormContainer1 = styled.div`
     display: grid;
     grid-template-columns: ${({isMobile})=> isMobile ? "300px" : "500px 500px"};
     justify-content: center;
-    overflow: hidden;
 `;
 
 export const FormContainer2 = styled.div`

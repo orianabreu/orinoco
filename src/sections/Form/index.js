@@ -1,13 +1,28 @@
 import React from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
+import Button from '../../components/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
-import Button from '../../components/Button';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(2),
+        width: '30ch',
+      },
+    },
+  }),
+);
 
 export default function ConsultancyForm() {
 
     const isMobile = useMediaQuery('(max-width:484px)');
+
+    const classes = useStyles();
 
     return (
         <WindowSection id='myform'>
@@ -24,16 +39,45 @@ export default function ConsultancyForm() {
                     <br/>
                     Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita.<br/>¡Estamos ansiosos por conocerte!
                 </S.SeccionText>
+
+                <form className={classes.root} noValidate autoComplete="off">
+                    <div>
+                        <TextField 
+                        id='filled-size-small'
+                        variant='filled'
+                        size='small'
+                        label='Nombre y Apellido'
+                        />
+
+                        <TextField 
+                        id='filled-size-small'
+                        variant='filled'
+                        size='small'
+                        label='Teléfono'
+                        helperText='Incluye el código de tu país'
+                        />
+
+                        <TextField 
+                        id='filled-size-small'
+                        variant='filled'
+                        size='small'
+                        label='Email'
+                        />
+                    </div>
+                </form>
             
             </S.OnboardingContainer>
 
-            <S.FormContainer1 isMobile={isMobile}>
-                    <S.InputArea>
+            
+
+            {/* <S.FormContainer1 isMobile={isMobile}> */}
+
+                    {/* <S.InputArea>
                         <S.Question>
                             Nombre y Apellido:
                         </S.Question>
-                        <S.NewInput 
-                            placeholder='Ej: Oriana'
+                        <Input 
+                            label='Ej: Oriana Abreu'
                         />
                     </S.InputArea>
                     
@@ -62,9 +106,9 @@ export default function ConsultancyForm() {
                         <S.NewInput 
                             placeholder='Ej: Turpial Digital'
                         />
-                    </S.InputArea>
+                    </S.InputArea> */}
 
-            </S.FormContainer1>
+            {/* </S.FormContainer1> */}
 
             <S.FormContainer2 isMobile={isMobile}>
                     <S.InputArea>
@@ -100,26 +144,27 @@ export default function ConsultancyForm() {
                         />
                     </S.InputArea>
 
-                    <S.SeccionText2>
+                    
                         <S.Question>
                             Selecciona la fecha y hora de tu preferencia.
-                        </S.Question> 
-                        <br/>
-                            Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b>
-                        <br/>
-                            La llamada tendrá una duración de 30 minutos.
-                    </S.SeccionText2>
+                        </S.Question>
+                        <S.SeccionText>
+                            <br/>
+                            Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b> La llamada tendrá una duración de 30 minutos.
+                        </S.SeccionText>
 
-                        <S.Container>
-                            <DateAndTimePicker />
-                        </S.Container>
-
-                        <S.Container>
-                            <Button styleType='callToAction'>
-                                AGENDAR
-                            </Button>
-                        </S.Container>
                         
+                            <S.Container>
+                                <DateAndTimePicker />
+                            </S.Container>
+
+                            <S.Container>
+                                <Button styleType='callToAction'>
+                                    AGENDAR
+                                </Button>
+                            </S.Container>
+                    
+
             </S.FormContainer2>        
             
 
