@@ -6,13 +6,16 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import FilledInput from '@material-ui/core/FilledInput';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       '& .MuiTextField-root': {
         margin: theme.spacing(2),
-        width: '30ch',
+        width: '31ch',
       },
     },
   }),
@@ -64,109 +67,66 @@ export default function ConsultancyForm() {
                         label='Email'
                         />
                     </div>
+                    <div>
+                        <FormControl fullWidth className={classes.margin} variant="filled">
+                            <InputLabel>Nombre de tu Negocio</InputLabel>
+                            <FilledInput id="filled-adornment-amount"/>
+                        </FormControl>
+
+                        <FormControl fullWidth className={classes.margin} variant="filled">
+                            <InputLabel>¿A qué se dedica tu negocio?</InputLabel>
+                            <FilledInput 
+                            id="filled-multiline-static"
+                            label="Multiline"
+                            multiline
+                            rows={4}
+                            defaultValue="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
+                            variant="filled"
+                            />
+                        </FormControl>
+
+                        <FormControl fullWidth className={classes.margin} variant="filled">
+                            <InputLabel>¿Qué te gustaría lograr con esta asesoría?</InputLabel>
+                            <FilledInput 
+                            id="filled-multiline-static"
+                            label="Multiline"
+                            multiline
+                            rows={4}
+                            defaultValue="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
+                            variant="filled"
+                            />
+                        </FormControl>
+
+                        <FormControl fullWidth className={classes.margin} variant="filled">
+                            <InputLabel>Si tu negocio tiene página web y redes sociales, déjanoslas aquí:</InputLabel>
+                            <FilledInput 
+                            id="filled-multiline-static"
+                            label="Multiline"
+                            multiline
+                            rows={4}
+                            variant="filled"
+                            />
+                        </FormControl>
+                    </div>
                 </form>
             
+                    <S.SeccionText>
+                        Selecciona la fecha y hora de tu preferencia.
+                        <br/>
+                        Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b> La llamada tendrá una duración de 30 minutos.
+                    </S.SeccionText>
+
+                    <S.Container>
+                        <DateAndTimePicker />
+                    </S.Container>
+
             </S.OnboardingContainer>
 
-            
-
-            {/* <S.FormContainer1 isMobile={isMobile}> */}
-
-                    {/* <S.InputArea>
-                        <S.Question>
-                            Nombre y Apellido:
-                        </S.Question>
-                        <Input 
-                            label='Ej: Oriana Abreu'
-                        />
-                    </S.InputArea>
-                    
-                    <S.InputArea>
-                        <S.Question>
-                            Teléfono:
-                        </S.Question>
-                        <S.NewInput 
-                            placeholder='Con el código de tu país'
-                        />
-                    </S.InputArea>
-                    
-                    <S.InputArea>
-                        <S.Question>
-                            Email:
-                        </S.Question>
-                        <S.NewInput 
-                            placeholder='Ej: info@turpialdigital.com'
-                        />
-                    </S.InputArea>
-
-                    <S.InputArea>
-                        <S.Question>
-                            Nombre de tu negocio:
-                        </S.Question>
-                        <S.NewInput 
-                            placeholder='Ej: Turpial Digital'
-                        />
-                    </S.InputArea> */}
-
-            {/* </S.FormContainer1> */}
-
-            <S.FormContainer2 isMobile={isMobile}>
-                    <S.InputArea>
-                        <S.Question>
-                            ¿A qué se dedica tu negocio?
-                        </S.Question>
-                        <S.BigInput
-                            className="bigColumn"
-                            isMobile={isMobile} 
-                            placeholder='Ej: Somos una agencia de marketing digital'
-                        />
-                    </S.InputArea>
-
-                    <S.InputArea>
-                        <S.Question>
-                            ¿Qué te gustaría lograr con esta asesoría?
-                        </S.Question>
-                        <S.BigInput
-                            className="bigColumn"
-                            isMobile={isMobile} 
-                            placeholder='Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas'
-                        />
-                    </S.InputArea>
-
-                    <S.InputArea>
-                        <S.Question>
-                            Si tu negocio tiene página web y redes sociales, déjanoslas aquí:
-                        </S.Question>
-                        <S.BigInput
-                            className="bigColumn"
-                            isMobile={isMobile} 
-                            placeholder='Ej: turpialdigital.com / @turpialdigital_agencia'
-                        />
-                    </S.InputArea>
-
-                    
-                        <S.Question>
-                            Selecciona la fecha y hora de tu preferencia.
-                        </S.Question>
-                        <S.SeccionText>
-                            <br/>
-                            Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b> La llamada tendrá una duración de 30 minutos.
-                        </S.SeccionText>
-
-                        
-                            <S.Container>
-                                <DateAndTimePicker />
-                            </S.Container>
-
-                            <S.Container>
-                                <Button styleType='callToAction'>
-                                    AGENDAR
-                                </Button>
-                            </S.Container>
-                    
-
-            </S.FormContainer2>        
-            
+                 <S.Container>
+                    <Button styleType='callToAction'>
+                        AGENDAR
+                    </Button>
+                </S.Container>
 
         </WindowSection>
     )

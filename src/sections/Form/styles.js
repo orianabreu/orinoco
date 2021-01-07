@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const OnboardingContainer = styled.div`
     padding: ${({isMobile}) => isMobile ? 20 : 7}% ${({isMobile}) => isMobile ? 10 : 17}% ${({isMobile}) => isMobile ? 5 : 3}%;
-    // padding: ${({theme})=> theme.scale.base*12}px ${({theme,isMobile})=>theme.scale.base*(isMobile?5:34)}px ${({theme,isMobile})=>theme.scale.base*(isMobile?2:3)}px;
     display: flex;
     flex-direction: column;
     align-items: center;
