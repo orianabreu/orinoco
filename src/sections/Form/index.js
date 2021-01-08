@@ -4,7 +4,7 @@ import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -14,34 +14,35 @@ import clsx from 'clsx';
 const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: '25ch',
+        margin: theme.spacing(2),
+        width: '33ch',
       },
     },
   }));
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    margin: {
-      margin: theme.spacing(1),
-    },
-    withoutLabel: {
-      marginTop: theme.spacing(3),
-    },
-    textField: {
-      width: '25ch',
-    },
-  }),
-  );
+const otherStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  margin: {
+    margin: theme.spacing(2),
+  },
+  withoutLabel: {
+    marginTop: theme.spacing(2),
+  },
+  textField: {
+    width: '30ch',
+  },
+}));
+
 
 export default function ConsultancyForm() {
 
     const isMobile = useMediaQuery('(max-width:484px)');
 
-    const classes = useStyles();
+    const styles = useStyles();
+    const classes = otherStyles();
 
     return (
         <WindowSection id='myform'>
@@ -59,8 +60,8 @@ export default function ConsultancyForm() {
                     Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita.<br/>¡Estamos ansiosos por conocerte!
                 </S.SeccionText>
 
-                <form className={classes.root} noValidate autoComplete="off">
-                    <div>
+                <form noValidate autoComplete="off">
+                    <div className={styles.root}>
                         <TextField 
                         id='filled-size-small'
                         variant='filled'
@@ -83,13 +84,21 @@ export default function ConsultancyForm() {
                         label='Email'
                         />
                     </div>
-                    <div>
-                        <FormControl fullWidth className={clsx(classes.margin, classes.withoutLabel, classes.textField)} variant="filled">
-                            <InputLabel>Nombre de tu Negocio</InputLabel>
-                            <FilledInput id="filled-adornment-amount"/>
+                    
+                    <div className={classes.root}>    
+
+                        <FormControl fullWidth className={classes.margin} variant="filled">
+                            <InputLabel>Nombre de tu negocio</InputLabel>
+                            <FilledInput 
+                            id="filled-multiline-static"
+                            label="Multiline"
+                            multiline
+                            rows={1}
+                            variant="filled"
+                            />
                         </FormControl>
 
-                        <FormControl fullWidth className={clsx(classes.margin, classes.textField)} variant="filled">
+                        <FormControl fullWidth className={classes.margin} variant="filled">
                             <InputLabel>¿A qué se dedica tu negocio?</InputLabel>
                             <FilledInput 
                             id="filled-multiline-static"
@@ -101,7 +110,7 @@ export default function ConsultancyForm() {
                             />
                         </FormControl>
 
-                        <FormControl fullWidth className={clsx(classes.margin, classes.textField)} variant="filled">
+                        <FormControl fullWidth className={classes.margin} variant="filled">
                             <InputLabel>¿Qué te gustaría lograr con esta asesoría?</InputLabel>
                             <FilledInput 
                             id="filled-multiline-static"
