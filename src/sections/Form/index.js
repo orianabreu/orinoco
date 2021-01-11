@@ -9,7 +9,6 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import FilledInput from '@material-ui/core/FilledInput';
-import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,12 +52,12 @@ export default function ConsultancyForm() {
                     ¡Bienvenido al mundo digital! 
                 </S.SectionTitle>
 
-                <S.SeccionText>
-                    Has dado el primer paso para hacer crecer tu negocio y con ello tus ganancias.<br/>Te damos las gracias por permitirnos acompañarte en el proceso. 
+                <S.SectionText>
+                    ¡Enhorabuena! Has dado el primer paso para hacer crecer tu negocio y, con ello, tus ganancias. Te damos las gracias por permitirnos acompañarte en el proceso. 
                     <br/>
                     <br/>
-                    Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita.<br/>¡Estamos ansiosos por conocerte!
-                </S.SeccionText>
+                    Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita. ¡Estamos ansiosos por conocerte!
+                </S.SectionText>
 
                 <form noValidate autoComplete="off">
                     <div className={styles.root}>
@@ -111,7 +110,7 @@ export default function ConsultancyForm() {
                         </FormControl>
 
                         <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>¿Qué te gustaría lograr con esta asesoría?</InputLabel>
+                            <InputLabel>¿Qué te gustaría lograr con la asesoría?</InputLabel>
                             <FilledInput 
                             id="filled-multiline-static"
                             label="Multiline"
@@ -135,11 +134,11 @@ export default function ConsultancyForm() {
                     </div>
                 </form>
             
-                    <S.SeccionText>
-                        Selecciona la fecha y hora de tu preferencia.
+                    <S.SectionText>
+                        <b>Selecciona la fecha y hora de tu preferencia.</b>
                         <br/>
                         Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b> La llamada tendrá una duración de 30 minutos.
-                    </S.SeccionText>
+                    </S.SectionText>
 
                     <S.Container>
                         <DateAndTimePicker />
