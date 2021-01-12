@@ -17,32 +17,35 @@ export const SectionTitle = styled.h1`
     text-decoration: underline;
     text-decoration-color: ${({theme})=> theme.palette.primary};
     text-align: center;
-    margin-bottom: ${({theme})=> theme.scale.base*6}px;
+    margin-bottom: ${({theme})=> theme.scale.base*3}px;
 `;
 
 export const SectionText = styled.p`
     font-family: ${({theme})=>theme.fonts.secondary};
     font-size: ${({theme})=> theme.scale.paragraph};
     text-align: justify;
-    margin: ${({theme})=> theme.scale.base*3}px ${({theme})=> theme.scale.base*2}px ${({theme})=> theme.scale.base*5}px;
+    margin: ${({isBigScreen})=> isBigScreen ? 2 : 4}% ${({isBigScreen})=> isBigScreen ? 12 : 2.3}%;
+    // margin: ${({theme})=> theme.scale.base*3}px ${({theme})=> theme.scale.base*2}px ${({theme})=> theme.scale.base*5}px;
 `;
 
-export const SeccionText2 = styled.p`
-    font-family: ${({theme})=>theme.fonts.secondary};
-    font-size: ${({theme})=> theme.scale.paragraph};
-    text-align: center;
-    margin: ${({theme})=> theme.scale.base}px auto;
-`;
-
-export const Container = styled.div`
+export const DateContainer = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
+    justify-content: flex-start;
+    padding: 0 ${({isMobile}) => isMobile ? 10 : 17}% 0;
     margin-bottom: 40px;
 
     & button {
         margin-top: 20px;
     }
+`;
+
+export const ButtonContainer = styled.div`
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: ${({theme})=>theme.scale.base*2}px;
+    margin: ${({theme, isMobile})=> isMobile ? 0 : `${theme.scale.base*5}px`} 0 ${({theme, isMobile})=> isMobile ? `${theme.scale.base*6}px` : `${theme.scale.base*7}px`};
 `;
 
