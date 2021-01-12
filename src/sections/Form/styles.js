@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const OnboardingContainer = styled.div`
-    padding: ${({isMobile}) => isMobile ? 20 : 7}% ${({isMobile}) => isMobile ? 10 : 17}% ${({isMobile}) => isMobile ? 5 : 2}%;
+    padding: ${({isMobile}) => isMobile ? 80 : 90}px ${({isMobile}) => isMobile ? 40 : 180}px ${({isMobile}) => isMobile ? 10 : 2}px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,23 +21,18 @@ export const SectionTitle = styled.h1`
 `;
 
 export const SectionText = styled.p`
+    display: inline;
     font-family: ${({theme})=>theme.fonts.secondary};
-    font-size: ${({theme})=> theme.scale.paragraph};
+    font-size: ${({theme, isMobile})=> isMobile ? '12px' : theme.scale.paragraph};
     text-align: justify;
-    margin: ${({isBigScreen})=> isBigScreen ? 2 : 4}% ${({isBigScreen})=> isBigScreen ? 12 : 2.3}%;
-    // margin: ${({theme})=> theme.scale.base*3}px ${({theme})=> theme.scale.base*2}px ${({theme})=> theme.scale.base*5}px;
+    width: ${({isMobile}) => isMobile ? 'auto' : 964}px;
+    margin: ${({isBigScreen})=> isBigScreen ? 2 : 4}%;
 `;
 
 export const DateContainer = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 ${({isMobile}) => isMobile ? 10 : 17}% 0;
-    margin-bottom: 40px;
-
-    & button {
-        margin-top: 20px;
-    }
+    width: ${({isMobile}) => isMobile ? 300 : 964}px;
+    margin: ${({isMobile}) => isMobile ? 30 : 10}px 0 ${({isMobile}) => isMobile ? 30 : 2}px;
 `;
 
 export const ButtonContainer = styled.div`
@@ -46,6 +41,6 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     align-items: flex-start;
     padding: ${({theme})=>theme.scale.base*2}px;
-    margin: ${({theme, isMobile})=> isMobile ? 0 : `${theme.scale.base*5}px`} 0 ${({theme, isMobile})=> isMobile ? `${theme.scale.base*6}px` : `${theme.scale.base*7}px`};
+    margin: ${({theme, isMobile})=> isMobile ? 0 : `${theme.scale.base*5}px`} 0 ${({theme, isMobile})=> isMobile ? `${theme.scale.base*8}px` : `${theme.scale.base*7}px`};
 `;
 

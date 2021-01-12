@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       '& .MuiTextField-root': {
         margin: theme.spacing(2),
-        width: '300px',
+        width: '297px',
       },
     },
   }));
@@ -53,7 +53,7 @@ export default function ConsultancyForm() {
                     ¡Bienvenido al mundo digital! 
                 </S.SectionTitle>
 
-                <S.SectionText isBigScreen={isBigScreen}>
+                <S.SectionText isBigScreen={isBigScreen} isMobile={isMobile}>
                     ¡Enhorabuena! Has dado el primer paso para hacer crecer tu negocio y, con ello, tus ganancias. Te damos las gracias por permitirnos acompañarte en el proceso. 
                     <br/>
                     <br/>
@@ -138,23 +138,17 @@ export default function ConsultancyForm() {
                     </div>
                 </form>
             
-                    <S.SectionText isBigScreen={isBigScreen}>
+                    <S.SectionText isBigScreen={isBigScreen} isMobile={isMobile}>
                         <b>Selecciona la fecha y hora de tu preferencia.</b>
                         <br/>
                         Podemos contactarte los días lunes, miércoles y viernes entre las <b>18:00 y las 20:00 (hora España).</b> La llamada tendrá una duración de 30 minutos.
                     </S.SectionText>
 
-                <div style={{display: 'flex', width:964}}>
-                    <DateAndTimePicker />
-                </div>
-                    
-
+                <S.DateContainer isMobile={isMobile}>
+                    <DateAndTimePicker/>
+                </S.DateContainer>
 
             </S.OnboardingContainer>
-
-                    <S.DateContainer isMobile={isMobile}>
-                        <DateAndTimePicker />
-                    </S.DateContainer>
 
                     <S.ButtonContainer isMobile={isMobile}>
                         <Button styleType='callToAction'>
