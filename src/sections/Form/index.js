@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
@@ -36,6 +36,7 @@ const otherStyles = makeStyles((theme) => ({
 }));
 
 
+
 export default function ConsultancyForm() {
 
     const isMobile = useMediaQuery('(max-width:484px)');
@@ -43,6 +44,28 @@ export default function ConsultancyForm() {
 
     const styles = useStyles();
     const classes = otherStyles();
+
+    const [values, setValues] = useState({
+        username: '',
+        phone: '',
+        email: '',
+        businessname: '',
+        sector: '',
+        meetgoal: '',
+        businessweb: ''
+    })
+    
+    const [errors, setErrors] = useState({})
+    
+    const handleChange = event => {
+        const {name, value} = event.target;
+        setValues({
+            ...values,
+            [name]: value
+        });
+    }
+
+    const {username, phone, email, businessname, sector, meetgoal, businessweb} = values;
 
     return (
         <WindowSection id='myform'>
@@ -68,6 +91,9 @@ export default function ConsultancyForm() {
                         size='small'
                         label='Nombre y Apellido'
                         isMobile={isMobile}
+                        name='username'
+                        vale={username}
+                        onChange={handleChange}
                         />
 
                         <TextField 
@@ -77,6 +103,9 @@ export default function ConsultancyForm() {
                         label='Teléfono'
                         helperText='Incluye el código de tu país'
                         isMobile={isMobile}
+                        name='phone'
+                        vale={phone}
+                        onChange={handleChange}
                         />
 
                         <TextField 
@@ -85,6 +114,9 @@ export default function ConsultancyForm() {
                         size='small'
                         label='Email'
                         isMobile={isMobile}
+                        name='email'
+                        vale={email}
+                        onChange={handleChange}
                         />
                     </div>
                     
@@ -98,6 +130,9 @@ export default function ConsultancyForm() {
                             multiline
                             rows={1}
                             variant="filled"
+                            name='businessname'
+                            vale={businessname}
+                            onChange={handleChange}
                             />
                         </FormControl>
 
@@ -110,6 +145,9 @@ export default function ConsultancyForm() {
                             rows={4}
                             defaultValue="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
                             variant="filled"
+                            name='sector'
+                            vale={sector}
+                            onChange={handleChange}
                             />
                         </FormControl>
 
@@ -122,6 +160,9 @@ export default function ConsultancyForm() {
                             rows={4}
                             defaultValue="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
                             variant="filled"
+                            name='meetgoal'
+                            vale={meetgoal}
+                            onChange={handleChange}
                             />
                         </FormControl>
 
@@ -133,6 +174,9 @@ export default function ConsultancyForm() {
                             multiline
                             rows={4}
                             variant="filled"
+                            name='businessweb'
+                            vale={businessweb}
+                            onChange={handleChange}
                             />
                         </FormControl>
                     </div>
