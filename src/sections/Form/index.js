@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
+import useForm from '../../components/useForm';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
 import { makeStyles } from '@material-ui/core/styles';
@@ -45,27 +46,7 @@ export default function ConsultancyForm() {
     const styles = useStyles();
     const classes = otherStyles();
 
-    const [values, setValues] = useState({
-        username: '',
-        phone: '',
-        email: '',
-        businessname: '',
-        sector: '',
-        meetgoal: '',
-        businessweb: ''
-    })
-    
-    const [errors, setErrors] = useState({})
-    
-    const handleChange = event => {
-        const {name, value} = event.target;
-        setValues({
-            ...values,
-            [name]: value
-        });
-    }
-
-    const {username, phone, email, businessname, sector, meetgoal, businessweb} = values;
+    const {values, handleChange, handleSubmit} = useForm();
 
     return (
         <WindowSection id='myform'>
@@ -83,7 +64,7 @@ export default function ConsultancyForm() {
                     Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita. ¡Estamos ansiosos por conocerte!
                 </S.SectionText>
 
-                <form noValidate autoComplete="off">
+                <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <div className={styles.root}>
                         <TextField 
                         id='filled-size-small'
@@ -92,7 +73,7 @@ export default function ConsultancyForm() {
                         label='Nombre y Apellido'
                         isMobile={isMobile}
                         name='username'
-                        vale={username}
+                        vale={values.username}
                         onChange={handleChange}
                         />
 
@@ -104,7 +85,7 @@ export default function ConsultancyForm() {
                         helperText='Incluye el código de tu país'
                         isMobile={isMobile}
                         name='phone'
-                        vale={phone}
+                        vale={values.phone}
                         onChange={handleChange}
                         />
 
@@ -115,9 +96,10 @@ export default function ConsultancyForm() {
                         label='Email'
                         isMobile={isMobile}
                         name='email'
-                        vale={email}
+                        vale={values.email}
                         onChange={handleChange}
                         />
+                        {/* {validateInfo && <p>{errors.email}</p>} */}
                     </div>
                     
                     <div className={classes.root}>    
@@ -131,7 +113,7 @@ export default function ConsultancyForm() {
                             rows={1}
                             variant="filled"
                             name='businessname'
-                            vale={businessname}
+                            vale={values.businessname}
                             onChange={handleChange}
                             />
                         </FormControl>
@@ -146,7 +128,7 @@ export default function ConsultancyForm() {
                             defaultValue="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
                             variant="filled"
                             name='sector'
-                            vale={sector}
+                            vale={values.sector}
                             onChange={handleChange}
                             />
                         </FormControl>
@@ -161,7 +143,7 @@ export default function ConsultancyForm() {
                             defaultValue="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
                             variant="filled"
                             name='meetgoal'
-                            vale={meetgoal}
+                            vale={values.meetgoal}
                             onChange={handleChange}
                             />
                         </FormControl>
@@ -175,7 +157,7 @@ export default function ConsultancyForm() {
                             rows={4}
                             variant="filled"
                             name='businessweb'
-                            vale={businessweb}
+                            vale={values.businessweb}
                             onChange={handleChange}
                             />
                         </FormControl>
@@ -195,7 +177,7 @@ export default function ConsultancyForm() {
             </S.OnboardingContainer>
 
                     <S.ButtonContainer isMobile={isMobile}>
-                        <Button styleType='callToAction'>
+                        <Button styleType='callToAction' onClick={handleSubmit}>
                             AGENDAR
                         </Button>
                     </S.ButtonContainer>
