@@ -82,7 +82,7 @@ export default function ConsultancyForm() {
                         variant='filled'
                         size='small'
                         label='Teléfono'
-                        helperText='Incluye el código de tu país'
+                        helperText='Incluye el código de tu país. (Ej: +34)'
                         isMobile={isMobile}
                         name='phone'
                         vale={values.phone}
@@ -149,7 +149,7 @@ export default function ConsultancyForm() {
                         </FormControl>
 
                         <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>Si tu negocio tiene página web y redes sociales, déjanoslas aquí:</InputLabel>
+                            <InputLabel>Si tu negocio tiene página web y redes sociales, déjanoslas aquí. En caso contrario, escribe N/A</InputLabel>
                             <FilledInput 
                             id="filled-multiline-static"
                             label="Multiline"

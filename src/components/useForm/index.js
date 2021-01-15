@@ -11,7 +11,6 @@ const useForm = () => {
         businessweb: ''
     })
     
-    const [errors, setErrors] = useState({})
     
     const handleChange = event => {
         const {name, value} = event.target;
