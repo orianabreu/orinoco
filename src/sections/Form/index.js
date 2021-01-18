@@ -106,65 +106,59 @@ export default function ConsultancyForm() {
                     
                     <div className={classes.root}>    
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>Nombre de tu negocio</InputLabel>
-                            <FilledInput 
-                            id="filled-multiline-static"
-                            label="Multiline"
-                            multiline
-                            rows={1}
+                        <TextField
+                            id="filled-full-width"
+                            className={classes.margin}
+                            fullWidth
                             variant="filled"
+                            label="Nombre de tu negocio"
                             name='businessname'
                             vale={values.businessname}
                             onChange={handleChange}
                             helperText={errors.businessname && <S.ErrorText>{errors.businessname}</S.ErrorText>}
-                            />
-                        </FormControl>
+                        />
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>¿A qué se dedica tu negocio?</InputLabel>
-                            <FilledInput 
+                        <TextField 
                             id="filled-multiline-static"
-                            label="Multiline"
+                            className={classes.margin}
+                            variant="filled"
+                            fullWidth
                             multiline
                             rows={4}
-                            defaultValue="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
-                            variant="filled"
+                            label="¿A qué se dedica tu negocio?"
+                            placeholder="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
                             name='sector'
                             vale={values.sector}
                             onChange={handleChange}
-                            />
-                        </FormControl>
+                        />
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>¿Qué te gustaría lograr con la asesoría?</InputLabel>
-                            <FilledInput 
+                        <TextField 
                             id="filled-multiline-static"
-                            label="Multiline"
+                            className={classes.margin}
+                            variant="filled"
+                            fullWidth
                             multiline
                             rows={4}
-                            defaultValue="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
-                            variant="filled"
+                            label="¿Qué te gustaría lograr con la asesoría?"
+                            placeholder="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
                             name='meetgoal'
                             vale={values.meetgoal}
                             onChange={handleChange}
-                            />
-                        </FormControl>
+                        />
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>Si tu negocio tiene página web y redes sociales, déjanoslas aquí. En caso contrario, escribe N/A</InputLabel>
-                            <FilledInput 
+                        <TextField 
                             id="filled-multiline-static"
-                            label="Multiline"
-                            multiline
-                            rows={4}
+                            className={classes.margin}
                             variant="filled"
+                            fullWidth
+                            multiline
+                            rows={6}
+                            label="Si tu negocio tiene página web y redes sociales, déjanoslas aquí. En caso contrario, escribe N/A."
                             name='businessweb'
                             vale={values.businessweb}
                             onChange={handleChange}
                             helperText={errors.businessweb && <S.ErrorText>{errors.businessweb}</S.ErrorText>}
-                            />
-                        </FormControl>
+                        />
                     </div>
                 </form>
             
