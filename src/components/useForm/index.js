@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const useForm = (validateForm) => {
+const useForm = (submit, validateForm) => {
     const [values, setValues] = useState({
         username: '',
         phone: '',
@@ -9,15 +9,11 @@ const useForm = (validateForm) => {
         sector: '',
         meetgoal: '',
         businessweb: ''
-    })
+    });
 
-    const [errors, setErrors] = useState({
-        username: '',
-        phone: '',
-        email: '',
-        businessname: '',
-        businessweb: ''
-    })
+    const [errors, setErrors] = useState({});
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
     
     
     const handleChange = event => {
@@ -32,7 +28,16 @@ const useForm = (validateForm) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(validateForm(values));
+        setIsSubmitting(true);
     }
+
+    useEffect(() => {
+        if (Object.keys(errors).length === 0 && isSubmitting) {
+            submit();
+        }
+    }, [errors]);
+
+    useEffect(() => {}, []);
 
     return {
         values,

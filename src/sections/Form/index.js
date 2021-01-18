@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
@@ -8,9 +8,6 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import FilledInput from '@material-ui/core/FilledInput';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,7 +36,7 @@ const otherStyles = makeStyles((theme) => ({
 
 
 
-export default function ConsultancyForm() {
+export default function ConsultancyForm({setFormIsOpen}) {
 
     const isMobile = useMediaQuery('(max-width:484px)');
     const isBigScreen = useMediaQuery('(min-width:1562px)');
@@ -47,7 +44,12 @@ export default function ConsultancyForm() {
     const styles = useStyles();
     const classes = otherStyles();
 
-    const {values, errors, handleChange, handleSubmit} = useForm(validateForm);
+    const {values, errors, handleChange, handleSubmit} = useForm(submit, validateForm);
+
+    function submit() {
+        setFormIsOpen(false);
+        window.alert('Hemos registrado tus datos. Te contactaremos en breve');
+    }
 
     return (
         <WindowSection id='myform'>

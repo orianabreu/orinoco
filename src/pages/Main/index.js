@@ -18,7 +18,7 @@ export default function Main(){
             {!formIsOpen && <><Services/>
             <KnowUs />
             </>}
-            {formIsOpen && <ConsultancyForm />}
+            {formIsOpen && <ConsultancyForm setFormIsOpen={setFormIsOpen}/>}
             <ChatButton />
             <Footer/>
         </MainContainer>
