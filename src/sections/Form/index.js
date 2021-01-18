@@ -3,6 +3,7 @@ import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
 import useForm from '../../components/useForm';
+import validateForm from '../../components/validateForm/index';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
 import { makeStyles } from '@material-ui/core/styles';
@@ -46,7 +47,7 @@ export default function ConsultancyForm() {
     const styles = useStyles();
     const classes = otherStyles();
 
-    const {values, handleChange, handleSubmit} = useForm();
+    const {values, errors, handleChange, handleSubmit} = useForm(validateForm);
 
     return (
         <WindowSection id='myform'>
@@ -75,6 +76,7 @@ export default function ConsultancyForm() {
                         name='username'
                         vale={values.username}
                         onChange={handleChange}
+                        helperText={errors.username && <S.ErrorText>{errors.username}</S.ErrorText>}
                         />
 
                         <TextField 
@@ -82,11 +84,11 @@ export default function ConsultancyForm() {
                         variant='filled'
                         size='small'
                         label='Teléfono'
-                        helperText='Incluye el código de tu país. (Ej: +34)'
                         isMobile={isMobile}
                         name='phone'
                         vale={values.phone}
                         onChange={handleChange}
+                        helperText={errors.phone && <S.ErrorText>{errors.phone}</S.ErrorText>}
                         />
 
                         <TextField 
@@ -98,8 +100,8 @@ export default function ConsultancyForm() {
                         name='email'
                         vale={values.email}
                         onChange={handleChange}
+                        helperText={errors.email && <S.ErrorText>{errors.email}</S.ErrorText>}
                         />
-                        {/* {validateInfo && <p>{errors.email}</p>} */}
                     </div>
                     
                     <div className={classes.root}>    
@@ -115,6 +117,7 @@ export default function ConsultancyForm() {
                             name='businessname'
                             vale={values.businessname}
                             onChange={handleChange}
+                            helperText={errors.businessname && <S.ErrorText>{errors.businessname}</S.ErrorText>}
                             />
                         </FormControl>
 
@@ -159,6 +162,7 @@ export default function ConsultancyForm() {
                             name='businessweb'
                             vale={values.businessweb}
                             onChange={handleChange}
+                            helperText={errors.businessweb && <S.ErrorText>{errors.businessweb}</S.ErrorText>}
                             />
                         </FormControl>
                     </div>

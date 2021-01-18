@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useForm = () => {
+const useForm = (validateForm) => {
     const [values, setValues] = useState({
         username: '',
         phone: '',
@@ -8,6 +8,14 @@ const useForm = () => {
         businessname: '',
         sector: '',
         meetgoal: '',
+        businessweb: ''
+    })
+
+    const [errors, setErrors] = useState({
+        username: '',
+        phone: '',
+        email: '',
+        businessname: '',
         businessweb: ''
     })
     
@@ -20,23 +28,15 @@ const useForm = () => {
         });
     }
 
-    // const validateInfo = (values) => {
 
-    //     let errors = {};
-
-    //     if (!values.email) {
-    //         errors.email = 'Email required';
-    //       } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-    //         errors.email = 'Email address is invalid';
-    //       }
-    // }
-
-    const handleSubmit = () => {
-        console.log('Submitted');
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setErrors(validateForm(values));
     }
 
     return {
         values,
+        errors,
         handleChange,
         handleSubmit
     }

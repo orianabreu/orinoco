@@ -1,4 +1,4 @@
-export default function validateForm(values) {
+function validateForm(values) {
 
     let errors = {};
 
@@ -25,12 +25,4 @@ export default function validateForm(values) {
     return errors;
 }
 
-//check if email is correct
-
-//name required value 
-
-//phone valid number or required 
-
-//business name required
-
-//business web required 
+export default validateForm;

@@ -29,6 +29,12 @@ export const SectionText = styled.p`
     margin: ${({isBigScreen})=> isBigScreen ? 2 : 4}%;
 `;
 
+export const ErrorText = styled.p`
+    font-family: ${({theme})=>theme.fonts.secondary};
+    font-size: ${({theme, isMobile})=> isMobile ? '12px' : theme.scale.paragraph};
+    color: ${({theme})=>theme.palette.red};
+`;
+
 export const DateContainer = styled.div`
     display: flex;
     width: ${({isMobile}) => isMobile ? 300 : 964}px;
