@@ -3,7 +3,7 @@ import * as S from './styles';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {GrFormClose} from 'react-icons/gr';
 
-export default function Drawer(){
+export default function Drawer({setFormIsOpen}){
     const [isOpen,setIsOpen] = useState(false);
     return (
         <S.IconContainer>
@@ -13,9 +13,18 @@ export default function Drawer(){
                 <S.Row justify='flex-end'>
                     <GrFormClose onClick={()=>setIsOpen(false)}/>
                 </S.Row>
-                <S.Row><a href='#home'>Home</a></S.Row>
-                <S.Row><a href='#services'>Servicios</a></S.Row>
-                <S.Row><a href='#knowus'>Quienes somos</a></S.Row>
+                <S.Row><a href='#home' onClick={()=> {
+                    setFormIsOpen(false);
+                    setIsOpen(false);
+                }}>Home</a></S.Row>
+                <S.Row><a href='#services' onClick={()=> {
+                    setFormIsOpen(false)
+                    setIsOpen(false);
+                }}>Servicios</a></S.Row>
+                <S.Row><a href='#knowus' onClick={()=> {
+                    setFormIsOpen(false);
+                    setIsOpen(false);
+                }}>Quienes somos</a></S.Row>
             </S.OptionsContainer>
         </S.IconContainer>
     )
