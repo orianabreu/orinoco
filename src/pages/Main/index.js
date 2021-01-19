@@ -9,8 +9,7 @@ import KnowUs from '../../sections/KnowUs';
 import ConsultancyForm from '../../sections/Form';
 import SnackBar from '../../components/SnackBar';
 
-export default function Main(){
-    const [formIsOpen, setFormIsOpen] = useState(false);
+export default function Main({formIsOpen, setFormIsOpen}){
     const [snackBarIsOpen, setSnackBarIsOpen] = useState(false);
 
     return (
