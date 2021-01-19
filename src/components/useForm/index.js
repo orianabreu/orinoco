@@ -37,7 +37,6 @@ const useForm = (submit, validateForm) => {
         }
     }, [errors]);
 
-    useEffect(() => {}, []);
 
     return {
         values,

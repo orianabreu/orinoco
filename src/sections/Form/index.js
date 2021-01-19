@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
 import useForm from '../../components/useForm';
 import validateForm from '../../components/validateForm/index';
+import SnackBar from '../../components/SnackBar';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
 import { makeStyles } from '@material-ui/core/styles';
@@ -36,7 +37,7 @@ const otherStyles = makeStyles((theme) => ({
 
 
 
-export default function ConsultancyForm({setFormIsOpen}) {
+export default function ConsultancyForm({setFormIsOpen, setSnackBarIsOpen}) {
 
     const isMobile = useMediaQuery('(max-width:484px)');
     const isBigScreen = useMediaQuery('(min-width:1562px)');
@@ -46,14 +47,15 @@ export default function ConsultancyForm({setFormIsOpen}) {
 
     const {values, errors, handleChange, handleSubmit} = useForm(submit, validateForm);
 
+
     function submit() {
+        setSnackBarIsOpen(true);
         setFormIsOpen(false);
-        window.alert('Hemos registrado tus datos. Te contactaremos en breve');
     }
 
     return (
         <WindowSection id='myform'>
-
+            
             <S.OnboardingContainer isMobile={isMobile}>
             
                 <S.SectionTitle>

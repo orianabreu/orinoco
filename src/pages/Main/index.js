@@ -7,9 +7,11 @@ import Services from "../../sections/Services";
 import ChatButton from '../../components/ChatButton';
 import KnowUs from '../../sections/KnowUs';
 import ConsultancyForm from '../../sections/Form';
+import SnackBar from '../../components/SnackBar';
 
 export default function Main(){
     const [formIsOpen, setFormIsOpen] = useState(false);
+    const [snackBarIsOpen, setSnackBarIsOpen] = useState(false);
 
     return (
         <MainContainer>
@@ -18,7 +20,8 @@ export default function Main(){
             {!formIsOpen && <><Services/>
             <KnowUs />
             </>}
-            {formIsOpen && <ConsultancyForm setFormIsOpen={setFormIsOpen}/>}
+            {formIsOpen && <ConsultancyForm setFormIsOpen={setFormIsOpen} setSnackBarIsOpen={setSnackBarIsOpen}/>}
+            <SnackBar open={snackBarIsOpen} setOpen={setSnackBarIsOpen}/>
             <ChatButton />
             <Footer/>
         </MainContainer>
