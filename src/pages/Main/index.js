@@ -8,9 +8,7 @@ import ChatButton from '../../components/ChatButton';
 import KnowUs from '../../sections/KnowUs';
 import ConsultancyForm from '../../sections/Form';
 
-export default function Main(){
-    const [formIsOpen, setFormIsOpen] = useState(false);
-
+export default function Main({formIsOpen, setFormIsOpen}){
     return (
         <MainContainer>
             {!formIsOpen && <Home/>}
