@@ -29,6 +29,14 @@ const useForm = (submit, validateForm) => {
         event.preventDefault();
         setErrors(validateForm(values));
         setIsSubmitting(true);
+
+        const scrollOptions = {
+            left: 100,
+            top: 0,
+            behavior: 'smooth'
+          }
+        
+          window.scrollTo(scrollOptions);
     }
 
     useEffect(() => {

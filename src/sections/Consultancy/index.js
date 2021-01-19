@@ -31,7 +31,17 @@ export default function Consultancy({setFormIsOpen}){
                         Si estás empezando a descubrir lo que el marketing digital puede hacer por tu negocio, <b>tienes dudas sobre qué camino seguir</b> y cuáles estrategias implementar, queremos darte algunas recomendaciones y acompañarte en el proceso. Agenda una asesoría GRATIS con nosotros.
                     </S.SectionParagraph> 
 
-                    <Button styleType='callToAction' onClick={()=>{setFormIsOpen(prevState=>!prevState)}}>
+                    <Button styleType='callToAction' onClick={()=>{
+                        setFormIsOpen(prevState=>!prevState)
+                        const scrollOptions = {
+                            left: 100,
+                            top: 0,
+                            behavior: 'auto'
+                          }
+                        
+                          window.scrollTo(scrollOptions);
+                        }
+                        }>
                         QUIERO UNA ASESORÍA GRATIS
                     </Button> 
 
