@@ -1,5 +1,4 @@
 import React from 'react';
-import WindowSection from "../../components/WindowSection";
 import * as S from './styles';
 import Button from '../../components/Button';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -9,8 +8,6 @@ export default function Consultancy({setFormIsOpen}){
     const customBreakpoint = useMediaQuery('(min-width:1216px)');
 
     return (
-        // <WindowSection id='consultancy'>
-
             <S.SectionContainer isMobile={isMobile}>
 
                 <S.OnboardingContainer isMobile={isMobile} isOnCustomBreakpoint={customBreakpoint}>
@@ -54,6 +51,5 @@ export default function Consultancy({setFormIsOpen}){
                     </S.ImageContainer>
                 }
             </S.SectionContainer>                        
-        // </WindowSection>
     )
 }
