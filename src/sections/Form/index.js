@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 import WindowSection from '../../components/WindowSection';
 import Button from '../../components/Button';
+import useForm from '../../components/useForm';
+import validateForm from '../../components/validateForm/index';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import DateAndTimePicker from '../../components/DatePicker';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import FilledInput from '@material-ui/core/FilledInput';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,7 +35,8 @@ const otherStyles = makeStyles((theme) => ({
 }));
 
 
-export default function ConsultancyForm() {
+
+export default function ConsultancyForm({setFormIsOpen, setSnackBarIsOpen}) {
 
     const isMobile = useMediaQuery('(max-width:484px)');
     const isBigScreen = useMediaQuery('(min-width:1562px)');
@@ -44,9 +44,17 @@ export default function ConsultancyForm() {
     const styles = useStyles();
     const classes = otherStyles();
 
+    const {values, errors, handleChange, handleSubmit} = useForm(submit, validateForm);
+
+
+    function submit() {
+        setSnackBarIsOpen(true);
+        setFormIsOpen(false);
+    }
+
     return (
         <WindowSection id='myform'>
-
+            
             <S.OnboardingContainer isMobile={isMobile}>
             
                 <S.SectionTitle>
@@ -60,7 +68,7 @@ export default function ConsultancyForm() {
                     Comenzar es muy sencillo. Solo tienes que rellenar el siguiente formulario, escoger el horario de tu preferencia y agendar tu cita. ¡Estamos ansiosos por conocerte!
                 </S.SectionText>
 
-                <form noValidate autoComplete="off">
+                <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <div className={styles.root}>
                         <TextField 
                         id='filled-size-small'
@@ -68,6 +76,10 @@ export default function ConsultancyForm() {
                         size='small'
                         label='Nombre y Apellido'
                         isMobile={isMobile}
+                        name='username'
+                        vale={values.username}
+                        onChange={handleChange}
+                        helperText={errors.username && <S.ErrorText>{errors.username}</S.ErrorText>}
                         />
 
                         <TextField 
@@ -75,8 +87,11 @@ export default function ConsultancyForm() {
                         variant='filled'
                         size='small'
                         label='Teléfono'
-                        helperText='Incluye el código de tu país'
                         isMobile={isMobile}
+                        name='phone'
+                        vale={values.phone}
+                        onChange={handleChange}
+                        helperText={errors.phone && <S.ErrorText>{errors.phone}</S.ErrorText>}
                         />
 
                         <TextField 
@@ -85,56 +100,68 @@ export default function ConsultancyForm() {
                         size='small'
                         label='Email'
                         isMobile={isMobile}
+                        name='email'
+                        vale={values.email}
+                        onChange={handleChange}
+                        helperText={errors.email && <S.ErrorText>{errors.email}</S.ErrorText>}
                         />
                     </div>
                     
                     <div className={classes.root}>    
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>Nombre de tu negocio</InputLabel>
-                            <FilledInput 
-                            id="filled-multiline-static"
-                            label="Multiline"
-                            multiline
-                            rows={1}
+                        <TextField
+                            id="filled-full-width"
+                            className={classes.margin}
+                            fullWidth
                             variant="filled"
-                            />
-                        </FormControl>
+                            label="Nombre de tu negocio"
+                            name='businessname'
+                            vale={values.businessname}
+                            onChange={handleChange}
+                            helperText={errors.businessname && <S.ErrorText>{errors.businessname}</S.ErrorText>}
+                        />
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>¿A qué se dedica tu negocio?</InputLabel>
-                            <FilledInput 
+                        <TextField 
                             id="filled-multiline-static"
-                            label="Multiline"
+                            className={classes.margin}
+                            variant="filled"
+                            fullWidth
                             multiline
                             rows={4}
-                            defaultValue="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
-                            variant="filled"
-                            />
-                        </FormControl>
+                            label="¿A qué se dedica tu negocio?"
+                            placeholder="Ej: Somos una agencia de marketing digital especializada en el sector gastronómico"
+                            name='sector'
+                            vale={values.sector}
+                            onChange={handleChange}
+                        />
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>¿Qué te gustaría lograr con la asesoría?</InputLabel>
-                            <FilledInput 
+                        <TextField 
                             id="filled-multiline-static"
-                            label="Multiline"
+                            className={classes.margin}
+                            variant="filled"
+                            fullWidth
                             multiline
                             rows={4}
-                            defaultValue="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
-                            variant="filled"
-                            />
-                        </FormControl>
+                            label="¿Qué te gustaría lograr con la asesoría?"
+                            placeholder="Ej: Tener una idea clara de cómo debo gestionar mi presencia digital para aumentar mis ventas"
+                            name='meetgoal'
+                            vale={values.meetgoal}
+                            onChange={handleChange}
+                        />
 
-                        <FormControl fullWidth className={classes.margin} variant="filled">
-                            <InputLabel>Si tu negocio tiene página web y redes sociales, déjanoslas aquí:</InputLabel>
-                            <FilledInput 
+                        <TextField 
                             id="filled-multiline-static"
-                            label="Multiline"
-                            multiline
-                            rows={4}
+                            className={classes.margin}
                             variant="filled"
-                            />
-                        </FormControl>
+                            fullWidth
+                            multiline
+                            rows={6}
+                            label="Si tu negocio tiene página web y redes sociales, déjanoslas aquí. En caso contrario, escribe N/A."
+                            name='businessweb'
+                            vale={values.businessweb}
+                            onChange={handleChange}
+                            helperText={errors.businessweb && <S.ErrorText>{errors.businessweb}</S.ErrorText>}
+                        />
                     </div>
                 </form>
             
@@ -151,7 +178,7 @@ export default function ConsultancyForm() {
             </S.OnboardingContainer>
 
                     <S.ButtonContainer isMobile={isMobile}>
-                        <Button styleType='callToAction'>
+                        <Button styleType='callToAction' onClick={handleSubmit}>
                             AGENDAR
                         </Button>
                     </S.ButtonContainer>
