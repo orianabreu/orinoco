@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styles';
-import Logo from '../../assets/img/logo-web.png';
+import Logo from '../../assets/img/logo-web.PNG';
 import Logotipo from '../../assets/img/logo.png';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Drawer from "../Drawer";

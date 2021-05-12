@@ -28,9 +28,11 @@ export default function Home(){
 
             <S.TextOverlay isMobile={isMobile}>
                 <S.HomeText isMobile={isMobile}>
-                    Hacemos crecer tu negocio con marketing creativo
+                    Mujer, ¿quieres ser una emprendedora de éxito?
                 </S.HomeText>
-                <Button styleType='callToAction' isMobile={isMobile}>QUIERO AUMENTAR MIS VENTAS</Button>
+                <Button styleType='callToAction' isMobile={isMobile}>
+                    ¡CLARO QUE SÍ!
+                </Button>
             </S.TextOverlay>
         </WindowSection>
     )

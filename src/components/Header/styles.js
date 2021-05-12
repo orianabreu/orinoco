@@ -13,7 +13,7 @@ export const Container = styled.header`
 
 export const LogoContainer = styled.div`
   img {
-    height: ${({theme})=>theme.scale.base*4}px;    
+    height: ${({theme})=>theme.scale.base*3}px;    
     cursor: pointer; 
     margin-top: ${({theme, isMobile})=> isMobile && theme.scale.base}px;
   }

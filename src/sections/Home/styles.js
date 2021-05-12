@@ -51,5 +51,6 @@ export const HomeText = styled.p`
     font-weight: 800;
     color: ${({theme})=> theme.palette.light};   
     margin-bottom: ${({theme})=>theme.scale.base*10}px; 
-    margin-top: ${({theme})=>theme.scale.base*6}px; 
+    margin-top: ${({theme})=>theme.scale.base*6}px;
+    text-align: center; 
 `;

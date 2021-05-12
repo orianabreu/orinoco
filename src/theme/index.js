@@ -14,8 +14,9 @@ const theme = {
         caption: '0.8rem'
     },
     palette: {
-        primary: '#fdcf08',
+        primary: '#7BC7AD',
         dark: '#141301',
+        blue: '#019097',
         light: '#ffffff',
         red: '#E55934',
         whatsapp: '#25d366'
